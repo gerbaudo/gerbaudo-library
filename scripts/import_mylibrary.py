@@ -28,7 +28,8 @@ def counters(comments) -> dict:
     for item in parse_json(comments, []):
         if isinstance(item, dict) and item.get("title"):
             key = item["title"].strip().lower()
-            key = {"mark": "marks"}.get(key, key)  # the app data uses both spellings
+            # the app data has a few spelling variants of the same counter
+            key = {"mark": "marks", "marksman": "marks"}.get(key, key)
             try:
                 out[key] = int(str(item.get("content", "")).strip())
             except ValueError:

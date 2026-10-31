@@ -12,8 +12,20 @@ Published at <https://gerbaudo.github.io/gerbaudo-library> (coming soon).
 - **Importers** in `scripts/` turn each source into the same columns:
   - `import_mylibrary.py` — the *My Library* Android app's SQLite export
     (page marks are stored in its Comments field)
-  - `import_screvi.py` — highlights from [Screvi](https://screvi.com), which also
-    syncs Kindle *(to do)*
+  - `import_screvi.py` — a [Screvi](https://screvi.com) highlights CSV export
+    (Screvi also syncs Kindle); only per-book counts are kept
+  - `merge.py` — combines them into `data/books.csv` and lists doubtful matches in
+    `data/needs_review.csv`; manual fixes go in `data/overrides.csv`
+
+## Refreshing the data
+
+```
+# drop new exports into data/raw/, then:
+cd scripts
+python import_mylibrary.py ../data/raw/mylibrary.db ../data/mylibrary.csv
+python import_screvi.py ../data/raw/screvi-highlights-YYYY-MM-DD.csv ../data/screvi.csv
+python merge.py
+```
 - **Matching** (`scripts/common.py`): every book gets a stable ID — its ISBN-13 when
   known, otherwise an `author-title` slug. Uncertain matches go to a review list
   instead of being merged silently.
