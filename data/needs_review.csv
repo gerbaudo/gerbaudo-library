@@ -1,5 +1,11 @@
 id,other_id,title,reason
-9788879591379,9788879591522,Fisica,"same title and author, different ISBN (two editions?)"
-9780099590088,9781448190690,Sapiens,"same title and author, different ISBN (two editions?)"
-9780750309509,9780750308649,Gauge Theories in Particle Physics,"same title and author, different ISBN (two editions?)"
-9788806141134,9788806400149,La Malora,"same title and author, different ISBN (two editions?)"
+9788879591379,9788879591522,Fisica,"same title and author, different ISBN (mylibrary-2021.csv)"
+9780099590088,9781448190690,Sapiens,"same title and author, different ISBN (mylibrary-2021.csv)"
+9780750309509,9780750308649,Gauge Theories in Particle Physics,"same title and author, different ISBN (mylibrary-2021.csv)"
+9788806141134,9788806400149,La Malora,"same title and author, different ISBN (mylibrary-2021.csv)"
+9780954161798,,An Introduction to GCC,marks went down from 10 to 5 in mylibrary-202610.csv; kept 10
+9781491912058,,Python Data Science Handbook,marks went down from 30 to 15 in mylibrary-202610.csv; kept 30
+9781930824133,9780961392109,The Visual Display of Quantitative Information,"same title and author, different ISBN (mylibrary-202610.csv)"
+9781930824140,9780961392116,Envisioning Information,"same title and author, different ISBN (mylibrary-202610.csv)"
+9780205313426,9781504093545,The Elements of Style,"same title and author, different ISBN (mylibrary-202610.csv)"
+9780140243512,,The Road Ahead,marks went down from 26 to 20 in mylibrary-202610.csv; kept 26

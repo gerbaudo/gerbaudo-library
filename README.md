@@ -29,7 +29,7 @@ Published at <https://gerbaudo.github.io/gerbaudo-library> (coming soon).
 ```
 # drop new exports into data/raw/, then:
 cd scripts
-python import_mylibrary.py ../data/raw/mylibrary.db ../data/mylibrary.csv
+python import_mylibrary.py ../data/raw/mylibrary-YYYYMM.db ../data/mylibrary-YYYYMM.csv   # one per snapshot
 python import_screvi.py ../data/raw/screvi-highlights-YYYY-MM-DD.csv ../data/screvi.csv
 python merge.py
 python enrich_openlibrary.py   # look up missing pages/ISBNs (cached in data/openlibrary.csv)

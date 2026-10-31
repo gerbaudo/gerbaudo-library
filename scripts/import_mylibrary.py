@@ -1,7 +1,10 @@
 """Import books from a "My Library" (Android app) SQLite export.
 
 Usage:
-    python scripts/import_mylibrary.py data/raw/mylibrary.db data/mylibrary.csv
+    python scripts/import_mylibrary.py data/raw/mylibrary-2021.db data/mylibrary-2021.csv
+
+Name the output data/mylibrary-<date>.csv: merge.py reads every such snapshot,
+oldest first (by file name), and combines them.
 
 The app stores per-book counters in the COMMENTS column as JSON, e.g.
     [{"title": "Marks", "content": "30"}, {"title": "Oneshot", "content": "50"}]
@@ -10,6 +13,7 @@ Each counter becomes its own column (marks, oneshot, skip, ...).
 
 import csv
 import json
+import re
 import sqlite3
 import sys
 
@@ -21,6 +25,12 @@ def parse_json(value, default):
         return json.loads(value) if value else default
     except (TypeError, json.JSONDecodeError):
         return default
+
+
+def clean(text) -> str:
+    """Strip zero-width characters the app sometimes inserts, and squeeze spaces."""
+    text = re.sub(r"[\u200b\u200c\u200d\ufeff]", "", text or "")
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def counters(comments) -> dict:
@@ -55,14 +65,15 @@ def main(db_path: str, out_path: str) -> None:
         writer.writeheader()
         for r in rows:
             isbn = normalize_isbn(r["ISBN"])
+            title, author = clean(r["TITLE"]), clean(r["author_name"])
             c = counters(r["COMMENTS"])
             writer.writerow({
-                "id": book_id(isbn, r["TITLE"] or "", r["author_name"]),
+                "id": book_id(isbn, title, author),
                 "isbn": isbn or "",
-                "title": (r["TITLE"] or "").strip(),
-                "author": r["author_name"],
+                "title": title,
+                "author": author,
                 "pages": r["PAGES"] or "",
-                "publisher": (r["PUBLISHER"] or "").strip(),
+                "publisher": clean(r["PUBLISHER"]),
                 "published": (r["PUBLISHED_DATE"] or "").strip(),
                 "categories": "; ".join(parse_json(r["CATEGORIES"], [])),
                 "read": int(r["READ"] or 0),

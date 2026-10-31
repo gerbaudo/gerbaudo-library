@@ -3,12 +3,13 @@
 Usage:
     python scripts/merge.py
 
-Reads data/mylibrary.csv and data/screvi.csv. Matching, in order:
+Reads every data/mylibrary-*.csv snapshot (oldest first) and data/screvi.csv.
+Matching, in order:
   1. same id (ISBN-13 when known)
   2. same loose key (main title + author last name)
-Identical duplicate rows are collapsed. Books that share a title and author but
-have different ISBNs are kept apart and listed in data/needs_review.csv, so a
-human decides whether they are two editions or one book entered twice.
+Across snapshots, a match is the same book scanned again: marks keep the larger
+value. Within one snapshot, the same title with different ISBNs is kept as two
+books. Anything doubtful is listed in data/needs_review.csv for a human to decide.
 
 Manual decisions can go in data/overrides.csv (columns: id, field, value); they are
 applied last and win over any import.
@@ -16,13 +17,20 @@ applied last and win over any import.
 
 import csv
 import os
-from collections import defaultdict
+import re
 
-from common import match_key
+from common import match_key, same_volume
 
 DATA = os.path.join(os.path.dirname(__file__), "..", "data")
 FIELDS = ["id", "isbn", "asin", "title", "author", "pages", "published", "categories",
           "read", "marks", "oneshot", "highlights", "sources", "pages_source"]
+
+
+def to_int(v):
+    try:
+        return int(float(v))
+    except (TypeError, ValueError):
+        return None
 
 
 def load(name):
@@ -38,29 +46,57 @@ def main() -> None:
     by_key: dict[str, str] = {}
     review = []
 
-    # 1. My Library: paper books, with ISBN and page marks
-    for r in load("mylibrary.csv"):
-        row = {f: r.get(f, "") for f in FIELDS}
-        row["sources"] = "mylibrary"
-        row["pages_source"] = "mylibrary" if row["pages"] not in ("", "0") else ""
-        if r["id"] in books:
-            if all(books[r["id"]][f] == row[f] for f in FIELDS):
-                continue  # exact duplicate scan
-            review.append({"id": r["id"], "other_id": r["id"], "title": r["title"],
-                           "reason": "same ISBN entered twice with different data"})
-            continue
-        key = match_key(r["title"], r["author"])
-        if key in by_key:
-            review.append({"id": r["id"], "other_id": by_key[key], "title": r["title"],
-                           "reason": "same title and author, different ISBN (two editions?)"})
-        books[r["id"]] = row
-        by_key.setdefault(key, r["id"])
+    # 1. My Library snapshots (paper books, page marks), oldest first.
+    #    A later snapshot re-scans many of the same books: match by ISBN, or by
+    #    title + author when the ISBN differs or is missing. Counters keep the
+    #    larger value (marks only grow as I read); metadata fills gaps.
+    snapshots = sorted(f for f in os.listdir(DATA) if re.fullmatch(r"mylibrary-.+\.csv", f))
+    for snap in snapshots:
+        seen_here: dict[str, str] = {}   # key -> id, within this snapshot
+        title_here: dict[str, str] = {}  # key -> title as written in this snapshot
+        for r in load(snap):
+            row = {f: r.get(f, "") for f in FIELDS}
+            row["sources"] = "mylibrary"
+            row["pages_source"] = "mylibrary" if row["pages"] not in ("", "0") else ""
+            key = match_key(r["title"], r["author"])
+            if (key in seen_here and seen_here[key] != r["id"]
+                    and same_volume(r["title"], title_here[key])):
+                # same title twice in ONE scan with different ISBNs: two editions, or two copies?
+                review.append({"id": r["id"], "other_id": seen_here[key], "title": r["title"],
+                               "reason": f"same title and author, different ISBN ({snap})"})
+            title_here.setdefault(key, r["title"])
+            existing_id = r["id"] if r["id"] in books else None
+            if (existing_id is None and key in by_key and key not in seen_here
+                    and same_volume(r["title"], books[by_key[key]]["title"])):
+                existing_id = by_key[key]  # re-scan from an earlier snapshot, different/no ISBN
+            if existing_id is None or existing_id in seen_here.values():
+                books[r["id"]] = row
+                by_key.setdefault(key, r["id"])
+                seen_here.setdefault(key, r["id"])
+                continue
+            seen_here.setdefault(key, existing_id)
+            old = books[existing_id]
+            for f in ("marks", "oneshot"):
+                a, b = to_int(old[f]), to_int(row[f])
+                if a is not None and b is not None and b < a:
+                    review.append({"id": existing_id, "other_id": "", "title": old["title"],
+                                   "reason": f"{f} went down from {a} to {b} in {snap}; kept {a}"})
+                if b is not None and (a is None or b > a):
+                    old[f] = row[f]
+            old["read"] = str(max(to_int(old["read"]) or 0, to_int(row["read"]) or 0))
+            for f in ("isbn", "pages", "published", "categories"):
+                if not old[f] or old[f] == "0":
+                    old[f] = row[f]
+            if not old["pages_source"] and row["pages_source"]:
+                old["pages_source"] = row["pages_source"]
+            if len(row["author"]) > len(old["author"]):  # prefer "Edward R. Tufte" over "Tufte"
+                old["author"] = row["author"]
 
     # 2. Screvi: Kindle/ebook highlights, matched by title + author
     for r in load("screvi.csv"):
         key = match_key(r["title"], r["author"])
         target = books.get(by_key.get(key, ""))
-        if target:
+        if target and same_volume(r["title"], target["title"]):
             target["highlights"] = r["highlights"]
             target["asin"] = target["asin"] or r["asin"]
             target["sources"] += ";screvi"

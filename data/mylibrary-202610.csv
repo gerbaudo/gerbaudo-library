@@ -1,0 +1,153 @@
+id,isbn,title,author,pages,publisher,published,categories,read,marks,oneshot,source
+9791033511960,9791033511960,Carbone et Silicium,Mathieu Bablet,,,2020,,0,,,mylibrary
+9788193245279,9788193245279,Data Structures and Algorithms Made Easy,Narasimha Karumanchi,,,2017,,0,2,,mylibrary
+9780984782802,9780984782802,Cracking the Coding Interview,Gayle Laakmann McDowell,,,2014,,0,,,mylibrary
+9780521670517,9780521670517,"Information Theory, Inference and Learning Algorithms",David MacKay,,Cambridge University Press (Distributed exclusively by Dev Publishers & Distributors),,,0,20,,mylibrary
+9780596510046,9780596510046,Beautiful Code,Andy Oram,,O'Reilly,2011,,0,10,,mylibrary
+9780954161798,9780954161798,An Introduction to GCC : For the GNU Compilers GCC and G++,Brian J Gough,,Network Theory Limited,2004,,0,5,,mylibrary
+9780791861967,9780791861967,The Unwritten Laws Of Engineering,Skakoon,,,,,0,7,,mylibrary
+9780375503177,9780375503177,When Genius Failed: The Rise and Fall of Long-Term Capital Management,Lowenstein,,Random House Books for Young Readers,2000,,0,,,mylibrary
+9780932633439,9780932633439,Peopleware: Productive Projects and Teams,Tom DeMarco,,,1999,,0,24,,mylibrary
+9780742516854,9780742516854,Disciplined Minds: A Critical Look at Salaried Professionals and the Soul-battering System That Shapes Their Lives,Schmidt,,Rowman & Littlefield Publishers,2001,,0,,,mylibrary
+9781736183007,9781736183007,Business Skills for Data Scientists: Practical Guidance in Six Key Topics,David Stephenson,,,,,0,,,mylibrary
+9781473630130,9781473630130,Small Data: The Tiny Clues That Uncover Huge Trends,Company,,,,,0,0,,mylibrary
+9789732346495,9789732346495,The Little Book of Deep Learning,François,,,20/06/2023,,0,6,,mylibrary
+9781491912058,9781491912058,Python Data Science Handbook,Jake VanderPlas,,,2016,,0,15,,mylibrary
+9781491907337,9781491907337,Second Arc of the Great Circle: Letting Go,Peter B. Cannon,,,2014,,0,3,,mylibrary
+9781449373320,9781449373320,Designing Data-Intensive Applications,Martin Kleppmann,,,2019,,0,18,,mylibrary
+9781098136796,9781098136796,"Natural Language Processing with Transformers, Revised Edition: Building Language Applications With Hugging Face",Tunstall,,O'Reilly Media,2022,,0,12,,mylibrary
+9781098115784,9781098115784,Machine Learning Design Patterns,Valliappa Lakshmanan,,,2020,,0,12,,mylibrary
+9780596007652,9780596007652,Ambient Findability: What We Find Changes Who We Become,Morville,,O'Reilly Media,,,0,2,,mylibrary
+huyen-designing-machine-learning-systems-an,,Designing Machine Learning Systems: An Iterative Process for Production-Ready Applications,Chip Huyen,,,05/2022,,0,,,mylibrary
+9781449361327,9781449361327,Data Science for Business,Foster Provost,,,2013,,0,15,,mylibrary
+9781449358655,9781449358655,Doing Data Science,Cathy O'Neil,,,2014,,0,9,,mylibrary
+9781491928462,9781491928462,Making Data Visual : A Practical Guide to Using Visualization for Insight,Fisher,,"O'Reilly Media, Incorporated",,,0,6,,mylibrary
+9781617295607,9781617295607,Data Science with Python and Dask,Daniel,,Manning Publications,2019,,0,2,,mylibrary
+9781617296741,9781617296741,Human-in-the-Loop Machine Learning,Robert (Munro) Monarch,422,Simon and Schuster,20/07/2021,Computers,0,6,,mylibrary
+9781617295836,9781617295836,Machine Learning for Business: Using Amazon SageMaker and Jupyter,Doug Hudgeon,,Manning,,,0,,,mylibrary
+9781718503779,9781718503779,Machine Learning Q and AI,Sebastian Raschka,266,No Starch Press,16/04/2024,Computers,0,16,,mylibrary
+9798772692936,9798772692936,Effective Pandas: Patterns for Data Manipulation (Treading on Python),Harrison,,Independently published,2021,,0,4,,mylibrary
+9781839213106,9781839213106,Pandas 1.x Cookbook - Second Edition,Harrison,,Packt Publishing,2020,,0,26,,mylibrary
+9781617290213,9781617290213,Learn Windows PowerShell in a Month of Lunches,Jones,,Manning Publications,2011,,0,,,mylibrary
+9781801817950,9781801817950,"Learn Amazon SageMaker: A guide to building, training, and deploying machine learning models for developers and data scientists, 2nd Edition",Julien Simon,,,,,0,5,,mylibrary
+9781492052203,9781492052203,Beyond the Cloud: Advanced Ichimoku Strategies: A Comprehensive Guide to Trading Success with Ichimoku Kinko Hyo,Triyam Trader,,,,,0,8,,mylibrary
+9781492077060,9781492077060,Practical Weak Supervision: Doing More with Less Data,Tok,,?????,2021,,0,5,,mylibrary
+9781292153964,9781292153964,"Artificial Intelligence: A Modern Approach, Global Edition",Russell,,,,,0,5,,mylibrary
+9781119002253,9781119002253,Storytelling with Data,Cole Nussbaumer Knaflic,,,2015,,0,1,,mylibrary
+9780692142608,9780692142608,Introduction to Algorithmic Marketing: Artificial Intelligence for Marketing Operations,Katsov,,Grid Dynamics,2017,,0,1,,mylibrary
+9783527410583,9783527410583,Data Analysis in High Energy Physics,Olaf Behnke,452,John Wiley & Sons,19/08/2013,Science,0,1,,mylibrary
+9780521379342,9780521379342,Statistics for Nuclear and Particle Physicists,Lyons,,Cambridge University Press,,,0,,,mylibrary
+9781260459142,9781260459142,Leading with AI and Analytics: Build Your Data Science IQ to Drive Business Value,Eric Anderson,,McGraw-Hill Education,2020,,0,,,mylibrary
+9782746746138,9782746746138,Grand atlas: Comprendre le monde en 200 cartes (Atlas/Monde),Collectif,,AUTREMENT,2017,,0,8,,mylibrary
+9780970601971,9780970601971,Show Me the Numbers,Stephen Few,,,2012,,0,,,mylibrary
+stroustrup-the-c-programming-language,,The C++ programming language,Bjarne Stroustrup,,,,,0,,,mylibrary
+9780201510034,9780201510034,"The Feynman Lectures of Physics -- Volume I: Mainly Mechanics, Radiation, and Heat (Commemorative Issue)",Feynman,,California Institute of Technology,1989,,0,,,mylibrary
+9780201510041,9780201510041,"The Feynman Lectures on Physics: Commemorative Issue, Volume 2: Mainly Electomagnetism and Matter",Richard P. Feynman,,Addison Wesley,1989,,0,,,mylibrary
+9780201510058,9780201510058,"The Feynman Lectures on Physics: Commemorative Issue, Volume 3: Quantum Mechanics",Richard P. Feynman,,Addison Wesley,1989,,0,,,mylibrary
+9780961392116,9780961392116,Envisioning Information,Tufte,,Graphics Pr,,,0,,,mylibrary
+9780961392109,9780961392109,The Visual Display of Quantitative Information,Edward R. Tufte,,,,,0,,,mylibrary
+9780007492893,9780007492893,Information is Beautiful (New Edition),McCandless,,Collins,2012,,0,,,mylibrary
+9781930824164,9781930824164,Beautiful Evidence,Edward R. Tufte,,Graphics Press,,,0,,,mylibrary
+9781930824003,9781930824003,"Seeing with Fresh Eyes: Meaning, Space, Data, Truth",Edward R. Tufte,,Graphics Press LLC,2020,,0,,,mylibrary
+9781930824133,9781930824133,The Visual Display of Quantitative Information,Edward R. Tufte,,,2001,,0,,,mylibrary
+9781930824140,9781930824140,Envisioning Information,Edward R. Tufte,,,2018,,0,,,mylibrary
+9781930824157,9781930824157,Visual Explanations,Edward R. Tufte,,,1997,,0,,,mylibrary
+9780133902839,9780133902839,Bayesian Methods for Hackers,Cameron Davidson-Pilon,,,2016,,0,,,mylibrary
+9780028619583,9780028619583,The Complete Idiot's Guide to Making Money on Wall Street,Heady,,ALPHA,,,0,3,,mylibrary
+9780349143866,9780349143866,How to Make the World Add Up,Tim Harford,,,2020,,0,10,,mylibrary
+9788842093299,9788842093299,"Barbari. Immigrati, profughi, deportati nell'impero romano",BARBERO,,"Laterza, Economica Laterza",2021,,0,,,mylibrary
+9788804668022,9788804668022,Le Citta Invisibili,CALVINO,,"Mondadori, 2016",,,0,8,,mylibrary
+9782073020192,9782073020192,De l'agression russe. Écrits polémiques,Jonathan Littell,,,,,0,3,,mylibrary
+9782072997372,9782072997372,Ukraine-Russie: La carte mentale du duel,Michel Foucher,,GALLIMARD,2022,,0,1,,mylibrary
+9782889012626,9782889012626,Compañeros de la emigración! Lavoratori emigrati!,Alain Melo,,,,,0,,,mylibrary
+9780262042833,9780262042833,Growth,Vaclav Smil,,,2019,,0,2,,mylibrary
+9788806267735,9788806267735,Donne che resistono : le Fosse Ardeatine dal massacro alla memoria : 1944-2025 / Michela Ponzani,Michela Ponzani,,Einaudi,2025,,0,,,mylibrary
+9782368041840,9782368041840,Le Bilan du Monde 2026: Un ordre mondial postoccidental,Le Monde HS,,,,,0,,,mylibrary
+9782036083547,9782036083547,La découverte du monde par les cartes,Collectif,,,,,0,,,mylibrary
+9782757603314,9782757603314,"Parapente, s'initier et progresser: S'initier et progresser",Pierre-Paul Ménégoz,,,,,0,,,mylibrary
+farina-mastering-paragliding,,Mastering Paragliding,Kelly Farina,,,,,0,,,mylibrary
+9782364937581,9782364937581,"L'aéro-manuel de la Météo: Vol libre, Vol en planeur, Vol moteur",Arnaud Campredon,,,,,0,,,mylibrary
+9782950864499,9782950864499,Les Visiteurs du Ciel,Unknown Author,,,,,0,,,mylibrary
+9788893440226,9788893440226,Pape Satan Aleppe. Cronache di una societa liquida (I fari),Umberto Eco,,La nave di Teseo,,,0,28,,mylibrary
+9798606605057,9798606605057,Il ventre di Napoli (completo) (Italian Edition),Matilde Serao,,Independently published,,,0,,,mylibrary
+9788807881503,9788807881503,Il giorno prima della felicitÃ (Italian Edition),De Luca,,,,,0,,,mylibrary
+9780241986547,9780241986547,Agent Running in the Field,John le Carré,,,2019,,0,,,mylibrary
+9788845278679,9788845278679,L' isola del giorno prima,Umberto Eco,473,Bompiani,2014,,0,,,mylibrary
+9788804489450,9788804489450,Il pellegrino dalle braccia d'inchiostro,Enrico Brizzi,316,Mondadori,2007,,0,,,mylibrary
+9780241448304,9780241448304,How To Avoid A Climate Disaster,Bill,,,,,0,16,,mylibrary
+9782738154262,9782738154262,"Climat, crises: Le plan de transformation de l'économie française",The Shift Project,,JACOB,2022,,0,9,,mylibrary
+9780345331359,9780345331359,Cosmos,Carl Sagan,,,1980,,0,31,,mylibrary
+9782354566838,9782354566838,Chief Bullshit Officer 2.0,Fix,,,,,0,,,mylibrary
+9782354564926,9782354564926,Chief Bullshit Officer,Fix,,,,,0,,,mylibrary
+9782368466360,9782368466360,Primo Levi,Matteo Mastragostino,,,13/04/2017,,0,,,mylibrary
+9781783962433,9781783962433,Prisoners of Geography,Tim Marshall,,,2015,,0,16,,mylibrary
+9781607746621,9781607746621,What Color Is Your Parachute? 2016: A Practical Manual for Job-Hunters and Career-Changers,Bolles,,Ten Speed Press,,,0,,,mylibrary
+9780061234002,9780061234002,Freakonomics [Revised and Expanded]: A Rogue Economist Explores the Hidden Side of Everything,Steven D. Levitt,,William Morrow,,,0,2,,mylibrary
+9782738148032,9782738148032,Discipliner la finance,Patrick ARTUS,,Odile Jacob,2019,,0,10,,mylibrary
+9780141047973,9780141047973,23 Things They Don't Tell You About Capitalism,Ha-Joon Chang,,,2010,,0,15,,mylibrary
+9781473637467,9781473637467,Factfulness,Hans Rosling,,,2018,,0,34,,mylibrary
+9780691172477,9780691172477,Ethics in the Real World,Peter Singer,,,2016,,0,2,,mylibrary
+9780349119854,9780349119854,The Undercover Economist,Harford,,,,,0,3,,mylibrary
+9780192853455,9780192853455,Economics,Partha Dasgupta,144,Oxford University Press,2006,,0,12,,mylibrary
+9781476771557,9781476771557,"Fallen Leaves: Last Words on Life, Love, War, and God",Durant,,Simon & Schuster,2015,,0,21,,mylibrary
+9780241398630,9780241398630,The Art of Statistics,David Spiegelhalter,,,2019,,0,30,,mylibrary
+9780897747226,9780897747226,Scientific English : A Guide for Scientists and Other Professionals,Robert A. Day,,"ABC-CLIO, LLC",1992,,0,,,mylibrary
+9781504093545,9781504093545,The Elements of Style,E. B. White,82,Open Road Media,05/12/2023,Language Arts & Disciplines,0,,,mylibrary
+9780205313426,9780205313426,The Elements of Style,E. B. White,,,,,0,,,mylibrary
+9780749395100,9780749395100,How to Travel with a Salmon A Format,Umberto Eco,,Vintage,01/02/1995,,0,11,,mylibrary
+9780140328882,9780140328882,The Wonderful Story of Henry Sugar And Six More: The Boy Who Talked with Animals; the Hitch-Hiker; the Mildenhall Treasure; the Swan; Lucky Break; a Piece of Cake (Plus),Dahl,,,,,0,3,,mylibrary
+9780451157447,9780451157447,"CARRIE ( Source for the 1976 CARRIE Movie, Director: Brian De Palma, Starring: Sissy Spacek, Piper Laurie, Amy Irving, John Travolta / Source for the MBO-Max 2026 CARRIE 8-Episode TV Series by Mike Flanagan, Starring: Summer H. Howell, Samantha Sloyan, Siena Agudong;",KING,,Signet Books,1988,,0,,,mylibrary
+9780140243512,9780140243512,The Road Ahead,Gates,,,,,0,20,,mylibrary
+9781847673510,9781847673510,Dreams From My Father: A Story of Race and Inheritance,Obama,,Canongate Books Ltd,2008,,0,12,,mylibrary
+9780307455871,9780307455871,The Audacity of Hope: Thoughts on Reclaiming the American Dream (Vintage),Barack Obama,,Vintage,,,0,12,,mylibrary
+9788875211257,9788875211257,Non ho risposte semplici: Il genio del cinema si racconta,Stanley Kubrick,,,08/01/2001,,0,7,,mylibrary
+9788806400149,9788806400149,La malora,Beppe Fenoglio,99,Einaudi,1990,,0,,,mylibrary
+9788804580874,9788804580874,L'ombra nera: Le stragi nazifasciste che non ricordiamo più,Gianni Oliva,,,2007,,0,,,mylibrary
+9788806117856,9788806117856,Una Questione Privata,Fenoglio,,,,,0,,,mylibrary
+9788806142315,9788806142315,La paga del sabato.,Beppe Fenoglio,156,Einaudi,1996,,0,4,,mylibrary
+9788806252762,9788806252762,Questioni private: Vita incompiuta di Beppe Fenoglio,Piero Negri Scaglione,,,17/01/2006,,0,3,,mylibrary
+9788858141649,9788858141649,DANTE,Alessandro Barbero,,Laterza,2021,,0,4,,mylibrary
+9780241491515,9780241491515,A Promised Land,Barack Obama,,,2020,,0,21,,mylibrary
+9780593734230,9780593734230,Nexus: A Brief History of Information Networks from the Stone Age to AI,Yuval Noah Harari,,,,,0,26,,mylibrary
+9782493343642,9782493343642,"Toppi, il maestro",Michel Jans,,,,,0,,,mylibrary
+9782205088168,9782205088168,"Le Monde sans fin, miracle énergétique et dérive climatique",Blain Christophe,,DARGAUD,2021,,0,,,mylibrary
+9780262536165,9780262536165,Energy and Civilization A History,Vaclav Smil,,MIT Press,,,0,30,,mylibrary
+9780691195780,9780691195780,The Little Book of Cosmology,Page,,Princeton University Press,2020,,0,8,,mylibrary
+9782754842099,9782754842099,L'éternité béante: Et si Einstein revenait ?,Étienne Klein,,FUTUROPOLIS,2024,,0,,,mylibrary
+9780226822587,9780226822587,"Probably Overthinking It: How to Use Data to Answer Questions, Avoid Statistical Traps, and Make Better Decisions",Downey,,,,,0,18,,mylibrary
+9782080487629,9782080487629,"Atlas de la mondialisation: Tensions, crises et basculement du monde",Laurent Carroué,,,,,0,6,,mylibrary
+9782080493675,9782080493675,Grand Atlas 2026,Frank Tétart,,,,,0,2,,mylibrary
+9782368041826,9782368041826,Le Monde HS n°99 : 40 cartes pour comprendre les nouveaux empereurs - Novembre/Décembre 2025,Le Monde HS,,,,,0,2,,mylibrary
+9791020401724,9791020401724,Caverne du pont d'arc (La): LA GROTTE CHAUVET,Collectif,,,,,0,,,mylibrary
+9782368041710,9782368041710,Le Bilan du Monde - 2025,Le Monde HS,,,,,0,,,mylibrary
+9791095743149,9791095743149,GERER LES RISQUES EN PARAPENTE UNE METHODE ET QUARANTE COMPETENCES,Jean-Marc Galan,,,,,0,1,,mylibrary
+9788806272104,9788806272104,Il sistema periodico,Primo Levi,,,12/04/1975,,0,8,,mylibrary
+9788804667940,9788804667940,Il castello dei destini incrociati,Italo Calvino,,,1969,,0,,,mylibrary
+9782917260067,9782917260067,Physics for Entertainment (Volume 1),Yakov Perelman,,,,,0,,,mylibrary
+9782917260401,9782917260401,Geometry in the Open Air,Yakov Perelman,,Prodinnova,,,0,,,mylibrary
+9782917260296,9782917260296,Amazing Experiments for Young Physicists,Yakov Perelman,,Prodinnova,2013,,0,,,mylibrary
+9782917260340,9782917260340,Physics Everywhere,Yakov Perelman,,Prodinnova,2014,,0,,,mylibrary
+9782917260180,9782917260180,Astronomy for Fun,Yakov Perelman,,Prodinnova,,,0,,,mylibrary
+9782711201846,9782711201846,Atlas historique mondial,Christian Grataloup,655,"Les Arènes, L'Histoire",2019,,0,,,mylibrary
+9791037507181,9791037507181,L'Atlas historique de la Terre,Christian Grataloup,,,2022,,0,,,mylibrary
+9782021531145,9782021531145,Immigration : le grand déni,François Heran,,SEUIL,2023,,0,8,,mylibrary
+9782376713340,9782376713340,Map Stories,Francisca Matteoli,,,,,0,,,mylibrary
+9781554071470,9781554071470,NightWatch: A Practical Guide to Viewing the Universe,Dickinson,,Firefly Books,,,0,,,mylibrary
+9781616085605,9781616085605,"Ultimate Book of Everyday Knots: (over 15,000 copies sold)",Budworth,,Skyhorse Publishing,,,0,,,mylibrary
+9782368041598,9782368041598,Le Bilan du Monde - 2024,Collectif,,,,,0,,,mylibrary
+9782268107790,9782268107790,Atlas géopolitique mondial 2023,Alexis Bautzmann,,,,,0,,,mylibrary
+9782810510368,9782810510368,Le jour le plus long,Le Figaro,,STE DU FIGARO,,,0,,,mylibrary
+9791036357053,9791036357053,L'Histoire du monde en BD,Pascale Bouchié,,,,,0,,,mylibrary
+9782205076394,9782205076394,Dans la combi de Thomas Pesquet,Montaigne,,,,,0,,,mylibrary
+9782203090132,9782203090132,"L'histoire de France en BD, Integrale : De la Prehistoire Ã nos jours ! [ History of France in Comic Book Format ] (French Edition)",Bruno Heitz (Illustrations),,,,,0,,,mylibrary
+9791037506863,9791037506863,"L'Incroyable histoire du vin - De la préhistoire à nos jours, 10 000 ans d'aventure",Benoist Simmat,,Les Arènes,2022,,0,,,mylibrary
+9780008316426,9780008316426,How Will You Measure Your Life?: A thought-provoking approach to measuring life's success,Christensen,,,,,0,20,,mylibrary
+9780387952109,9780387952109,Espacio Joven 360 A1 : Tutor Manual: Libro del Profesor con codigo de acceso profesor al ELEteca,Team Espacio,,,,,0,,,mylibrary
+9780750663700,9780750663700,The Circuit Designer's Companion,Williams,,,,,0,,,mylibrary
+9780748409426,9780748409426,Introduction to Statistical Physics,Huang,,Taylor and Francis,2001,,0,,,mylibrary
+9782956341741,9782956341741,Le ciel au télescope: 110 observations essentielles à faire avec votre instrument,Carine Souplet,,,,,0,,,mylibrary
+9780241454411,9780241454411,Numbers Don't Lie: 71 Things You Need to Know About the World,Smil,,,,,0,21,,mylibrary
+9791021054622,9791021054622,Le dessous des cartes compact : atlas géopolitique: Le retour de la guerre,Émilie Aubry,,,,,0,8,,mylibrary
+9780593189641,9780593189641,Atomic Habits,James Clear,,,2018,,0,1,,mylibrary
+9798341662698,9798341662698,"An Illustrated Guide to AI Agents: Concepts and Code for Building Agents with Llms, Tools, and Memory",Maarten Grootendorst,,,,,0,,,mylibrary
+9781098166304,9781098166304,AI Engineering,Chip Huyen,,,2024,,0,,,mylibrary
