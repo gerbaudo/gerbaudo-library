@@ -27,6 +27,7 @@ python import_screvi.py ../data/raw/screvi-highlights-YYYY-MM-DD.csv ../data/scr
 python merge.py
 python enrich_openlibrary.py   # look up missing pages/ISBNs (cached in data/openlibrary.csv)
 python merge.py                # re-merge to apply them
+python build_site.py           # rebuild docs/index.html (the viewer)
 ```
 
 The `pages_source` column says where each page count came from: `mylibrary` (my
@@ -35,7 +36,9 @@ across editions of the title: an estimate, fine for Kindle books).
 - **Matching** (`scripts/common.py`): every book gets a stable ID — its ISBN-13 when
   known, otherwise an `author-title` slug. Uncertain matches go to a review list
   instead of being merged silently.
-- **Covers** are linked from Open Library by ISBN, not stored here.
+- **Viewer**: `docs/index.html`, a single static page (shelf of spines, search,
+  and a marks-versus-pages chart) built by `build_site.py` from `docs/template.html`.
+  GitHub Pages serves it from the `docs/` folder.
 
 ## Privacy
 

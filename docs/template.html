@@ -1,0 +1,303 @@
+<title>Gerbaudo Library</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a library room. Header + controls, then either the shelf (spines on boards)
+   or the signal chart (marks vs pages, log-log), with a detail card for the chosen book. */
+:root {
+  --bg: #e9ecef;        /* cool paper grey */
+  --panel: #f6f7f8;
+  --ink: #1d2733;
+  --muted: #5d6875;
+  --rule: #c9cfd6;
+  --shelf: #8a6a4f;     /* wood board */
+  --gilt: #c9a227;      /* gold bands = signal */
+  --paper: #2f5d7c;     /* paper books (My Library) */
+  --kindle: #b5523b;    /* Kindle books (Screvi) */
+  --focus: #2f5d7c;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif-condensed, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15191e; --panel: #1d232a; --ink: #e4e8ec; --muted: #9aa4af; --rule: #343c46;
+  --shelf: #6b4f39; --gilt: #d9b440; --paper: #6fa3c7; --kindle: #e0826b; --focus: #6fa3c7; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #15191e; --panel: #1d232a; --ink: #e4e8ec; --muted: #9aa4af; --rule: #343c46;
+  --shelf: #6b4f39; --gilt: #d9b440; --paper: #6fa3c7; --kindle: #e0826b; --focus: #6fa3c7; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--body); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+h1 { font: 600 2.6rem/1 var(--display); letter-spacing: .01em; margin: 0; text-wrap: balance; }
+.stats { font: 400 .8rem var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.stats b { color: var(--ink); font-weight: 500; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin: 22px 0 18px;
+  padding-block: 12px; border-block: 1px solid var(--rule); }
+.tabs { display: flex; gap: 4px; }
+.tab { font: 600 1.05rem var(--display); letter-spacing: .04em; text-transform: uppercase;
+  background: none; border: 0; color: var(--muted); padding: 4px 10px; cursor: pointer; border-radius: 3px; }
+.tab[aria-selected="true"] { color: var(--ink); background: var(--panel); box-shadow: inset 0 -2px 0 var(--gilt); }
+.ctl { display: flex; align-items: center; gap: 6px; font: .8rem var(--mono); color: var(--muted); }
+input[type="search"], select { font: .9rem var(--body); color: var(--ink); background: var(--panel);
+  border: 1px solid var(--rule); border-radius: 3px; padding: 6px 8px; }
+input[type="search"] { width: min(260px, 100%); }
+.search { flex: 1 1 200px; }
+.search input { width: 100%; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.legend { display: flex; gap: 14px; font: .75rem var(--mono); color: var(--muted); flex-wrap: wrap; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 5px; }
+
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; align-items: start; }
+@media (max-width: 860px) { .main { grid-template-columns: minmax(0, 1fr); } }
+
+/* Shelf: every flex line is 200px tall; a wood board is painted at the bottom of each line */
+.shelf { display: flex; flex-wrap: wrap; align-content: flex-start; min-height: 200px;
+  background: repeating-linear-gradient(to bottom, transparent 0 190px, var(--shelf) 190px 200px); }
+.slot { height: 200px; display: flex; align-items: flex-end; padding: 0 1px 10px; }
+.spine { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  border: 0; padding: 6px 0; cursor: pointer; border-radius: 2px 2px 0 0; color: #f4f1ea;
+  font: 500 .78rem/1 var(--display); letter-spacing: .03em;
+  box-shadow: inset -2px 0 0 rgba(0,0,0,.18), inset 2px 0 0 rgba(255,255,255,.08);
+  transition: transform .15s ease; }
+.spine:hover, .spine.sel { transform: translateY(-8px); }
+.spine.sel { outline: 2px solid var(--gilt); outline-offset: 1px; }
+.spine span { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis; max-height: 100%; }
+.spine.nopages { opacity: .8; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.08) 0 4px, transparent 4px 8px); }
+.band { position: absolute; left: 0; right: 0; height: 3px; background: var(--gilt); }
+.empty { font-style: italic; color: var(--muted); padding: 40px 0; }
+
+/* Signal chart */
+.chart { background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; padding: 12px; }
+.chart svg { display: block; width: 100%; height: auto; }
+.chart text { fill: var(--muted); font: 11px var(--mono); }
+.chart .grid { stroke: var(--rule); stroke-width: 1; }
+.chart .iso { stroke: var(--gilt); stroke-width: 1; stroke-dasharray: 3 4; fill: none; }
+.chart .isolab { fill: var(--gilt); }
+.chart .axlab { fill: var(--ink); font: 12px var(--mono); }
+.dot { cursor: pointer; stroke-width: 1.5; }
+.dot:hover, .dot.sel { stroke: var(--ink); stroke-width: 2.5; }
+.note { font: .8rem var(--mono); color: var(--muted); margin: 8px 2px 0; }
+.top { margin-top: 22px; }
+.top h2, .detail h2 { font: 600 1.25rem var(--display); letter-spacing: .03em; text-transform: uppercase; margin: 0 0 8px; }
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th { text-align: left; font: 500 .72rem var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .05em;
+  border-bottom: 1px solid var(--rule); padding: 6px 8px; }
+td { border-bottom: 1px solid var(--rule); padding: 6px 8px; vertical-align: top; }
+td.n, th.n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--panel); }
+
+/* Detail card */
+.detail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); background: var(--panel);
+  border: 1px solid var(--rule); border-radius: 4px; padding: 18px; }
+.detail .t { font: 600 1.35rem/1.2 var(--body); margin: 0 0 4px; text-wrap: balance; }
+.detail .a { color: var(--muted); margin: 0 0 14px; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 0; font-size: .9rem; }
+dt { font: .75rem var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; padding-top: 2px; }
+dd { margin: 0; font-variant-numeric: tabular-nums; min-width: 0; overflow-wrap: anywhere; }
+.density { font: 500 2rem/1 var(--mono); margin: 14px 0 2px; font-variant-numeric: tabular-nums; }
+.density small { font-size: .8rem; color: var(--muted); font-weight: 400; }
+.detail a { color: var(--paper); }
+.pill { display: inline-block; font: .7rem var(--mono); padding: 1px 6px; border-radius: 9px; border: 1px solid currentColor; margin-right: 4px; }
+.pill.paper { color: var(--paper); } .pill.kindle { color: var(--kindle); }
+.hint { color: var(--muted); font-style: italic; margin: 0; }
+footer { margin-top: 36px; font: .75rem var(--mono); color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .spine { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Gerbaudo Library</h1>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <div class="controls">
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" id="tab-shelf" data-view="shelf">Shelf</button>
+      <button class="tab" role="tab" id="tab-signal" data-view="signal">Signal</button>
+    </div>
+    <label class="ctl search"><input type="search" id="q" placeholder="Search title, author, category" aria-label="Search"></label>
+    <label class="ctl">Format
+      <select id="src"><option value="all">All</option><option value="paper">Paper</option><option value="kindle">Kindle</option></select>
+    </label>
+    <label class="ctl" id="sort-wrap">Sort
+      <select id="sort">
+        <option value="author">Author</option><option value="density">Marks per 100 pages</option>
+        <option value="signal">Marks + highlights</option><option value="pages">Pages</option>
+      </select>
+    </label>
+    <label class="ctl"><input type="checkbox" id="onlysig"> With marks only</label>
+  </div>
+
+  <div class="main">
+    <section>
+      <div id="view-shelf">
+        <div class="legend">
+          <span>Spine width = pages</span>
+          <span><span class="sw" style="background:var(--gilt)"></span>1–3 gold bands = 1, 3, 10+ marks per 100 pages</span>
+          <span>Striped = page count unknown</span>
+        </div>
+        <div class="shelf" id="shelf" style="margin-top:12px"></div>
+      </div>
+      <div id="view-signal" hidden>
+        <div class="legend">
+          <span><span class="sw" style="background:var(--paper)"></span>Paper: page marks</span>
+          <span><span class="sw" style="background:var(--kindle)"></span>Kindle: highlights</span>
+          <span>Hollow = page count estimated</span>
+          <span><span class="sw" style="background:var(--gilt)"></span>Dashed = marks per 100 pages</span>
+        </div>
+        <div class="chart" style="margin-top:12px"><svg id="chart" viewBox="0 0 820 520" role="img" aria-label="Marks or highlights against page count, log scale"></svg></div>
+        <p class="note" id="chart-note"></p>
+        <div class="top">
+          <h2>Densest books</h2>
+          <div class="tbl-wrap"><table>
+            <thead><tr><th>Title</th><th>Author</th><th class="n">Pages</th><th class="n">Marks</th><th class="n">Per 100 p.</th></tr></thead>
+            <tbody id="top"></tbody>
+          </table></div>
+        </div>
+      </div>
+    </section>
+    <aside class="detail" id="detail" aria-live="polite"></aside>
+  </div>
+  <footer id="foot"></footer>
+</div>
+
+<script id="books" type="application/json">__BOOKS_JSON__</script>
+<script>
+const BOOKS = JSON.parse(document.getElementById("books").textContent).map(b => {
+  const signal = (b.marks || 0) + (b.hl || 0);
+  return { ...b, signal, kindle: b.src.includes("screvi") && !b.src.includes("mylibrary"),
+    density: signal && b.pages ? signal / b.pages * 100 : null };
+});
+const $ = id => document.getElementById(id);
+const SPINE_COLORS = ["#6e2f36", "#2f4f3e", "#283c5c", "#7a5a26", "#4b4f58", "#55385a", "#3d5a63", "#7b3f2a"];
+const state = { view: "shelf", q: "", src: "all", sort: "author", onlysig: false, sel: null };
+try { Object.assign(state, JSON.parse(localStorage.getItem("lib-prefs") || "{}"), { sel: null }); } catch (e) {}
+
+const fold = s => (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const lastName = a => fold((a || "").split(/ and |,/)[0].trim().split(/\s+/).pop());
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const fmt = n => n == null ? "–" : n >= 10 ? Math.round(n).toString() : n.toFixed(1);
+const hash = s => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+
+function filtered() {
+  const q = fold(state.q);
+  return BOOKS.filter(b =>
+    (state.src === "all" || (state.src === "kindle") === b.kindle) &&
+    (!state.onlysig || b.signal > 0) &&
+    (!q || fold(b.title + " " + b.author + " " + b.cat).includes(q)));
+}
+function sorted(list) {
+  const by = {
+    author: (a, b) => lastName(a.author).localeCompare(lastName(b.author)) || a.title.localeCompare(b.title),
+    density: (a, b) => (b.density ?? -1) - (a.density ?? -1),
+    signal: (a, b) => b.signal - a.signal,
+    pages: (a, b) => (b.pages || 0) - (a.pages || 0),
+  }[state.sort];
+  return list.slice().sort(by);
+}
+
+function renderShelf(list) {
+  const el = $("shelf");
+  if (!list.length) { el.innerHTML = '<p class="empty">No books match. Clear the search or filters.</p>'; return; }
+  el.innerHTML = sorted(list).map(b => {
+    const w = b.pages ? Math.max(14, Math.min(46, Math.round(Math.sqrt(b.pages) * 1.6))) : 20;
+    const h = 150 + (hash(b.id) % 31);
+    const color = SPINE_COLORS[hash(b.cat || b.author || b.id) % SPINE_COLORS.length];
+    const bands = b.density == null ? 0 : b.density >= 10 ? 3 : b.density >= 3 ? 2 : b.density >= 1 ? 1 : 0;
+    const bandHtml = Array.from({ length: bands }, (_, i) => `<i class="band" style="top:${8 + i * 6}px"></i>`).join("");
+    return `<div class="slot"><button class="spine${b.pages ? "" : " nopages"}${state.sel === b.id ? " sel" : ""}"
+      data-id="${esc(b.id)}" style="width:${w}px;height:${h}px;background-color:${color}"
+      title="${esc(b.title)} · ${esc(b.author)}" aria-label="${esc(b.title)} by ${esc(b.author)}">${bandHtml}<span>${esc(b.title)}</span></button></div>`;
+  }).join("");
+}
+
+function renderChart(list) {
+  const pts = list.filter(b => b.signal > 0 && b.pages);
+  const W = 820, H = 520, m = { l: 56, r: 64, t: 16, b: 46 };
+  const X0 = 30, X1 = 2000, Y0 = 1, Y1 = 300;
+  const lx = v => m.l + (Math.log10(v) - Math.log10(X0)) / (Math.log10(X1) - Math.log10(X0)) * (W - m.l - m.r);
+  const ly = v => H - m.b - (Math.log10(v) - Math.log10(Y0)) / (Math.log10(Y1) - Math.log10(Y0)) * (H - m.t - m.b);
+  let s = "";
+  for (const v of [30, 50, 100, 200, 500, 1000, 2000]) s += `<line class="grid" x1="${lx(v)}" x2="${lx(v)}" y1="${m.t}" y2="${H - m.b}"/><text x="${lx(v)}" y="${H - m.b + 16}" text-anchor="middle">${v}</text>`;
+  for (const v of [1, 3, 10, 30, 100, 300]) s += `<line class="grid" x1="${m.l}" x2="${W - m.r}" y1="${ly(v)}" y2="${ly(v)}"/><text x="${m.l - 8}" y="${ly(v) + 4}" text-anchor="end">${v}</text>`;
+  s += `<text class="axlab" x="${(m.l + W - m.r) / 2}" y="${H - 8}" text-anchor="middle">Pages</text>`;
+  s += `<text class="axlab" transform="translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)" text-anchor="middle">Marks or highlights</text>`;
+  s += `<defs><clipPath id="plot"><rect x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${H - m.t - m.b}"/></clipPath></defs>`;
+  for (const d of [1, 3, 10, 30]) {
+    // y = d/100 * x ; draw across the x range, clipped to the plot
+    s += `<line class="iso" clip-path="url(#plot)" x1="${lx(X0)}" y1="${ly(d / 100 * X0)}" x2="${lx(X1)}" y2="${ly(d / 100 * X1)}"/>`;
+    const xr = Math.min(X1, Y1 * 100 / d), yr = d / 100 * xr;
+    s += `<text class="isolab" x="${Math.min(lx(xr) + 4, W - m.r + 4)}" y="${ly(yr) + 4}">${d}/100p</text>`;
+  }
+  s += pts.map(b => {
+    const c = b.kindle ? "var(--kindle)" : "var(--paper)";
+    const est = b.ps === "est";
+    return `<circle class="dot${state.sel === b.id ? " sel" : ""}" data-id="${esc(b.id)}" cx="${lx(Math.min(X1, Math.max(X0, b.pages))).toFixed(1)}"
+      cy="${ly(Math.min(Y1, b.signal)).toFixed(1)}" r="${5 + Math.min(4, Math.log10(b.signal) * 2)}"
+      fill="${est ? "none" : c}" fill-opacity="${est ? 0 : .75}" stroke="${c}"><title>${esc(b.title)} · ${b.signal} in ${b.pages} p.</title></circle>`;
+  }).join("");
+  $("chart").innerHTML = s;
+  const missing = list.filter(b => b.signal > 0 && !b.pages).length;
+  $("chart-note").textContent = `${pts.length} books plotted.` + (missing ? ` ${missing} with marks are left out because their page count is unknown.` : "") +
+    " Books above the steeper lines gave the most per page.";
+  $("top").innerHTML = pts.slice().sort((a, b) => b.density - a.density).slice(0, 15).map(b =>
+    `<tr data-id="${esc(b.id)}"><td>${esc(b.title)}</td><td>${esc(b.author)}</td><td class="n">${b.pages}${b.ps === "est" ? "*" : ""}</td><td class="n">${b.signal}</td><td class="n">${fmt(b.density)}</td></tr>`).join("");
+}
+
+function renderDetail() {
+  const b = BOOKS.find(x => x.id === state.sel);
+  const el = $("detail");
+  if (!b) {
+    el.innerHTML = `<h2>Choose a book</h2><p class="hint">Click a spine, a dot on the chart, or a row in the table to see its details.</p>`;
+    return;
+  }
+  const rows = [
+    ["Pages", b.pages ? b.pages + (b.ps === "est" ? " (estimate)" : "") : "unknown"],
+    ["Published", b.pub], ["Category", b.cat],
+    ["Page marks", b.marks], ["One-shot", b.oneshot], ["Highlights", b.hl],
+    ["ISBN", b.isbn],
+  ].filter(r => r[1] !== "" && r[1] != null && r[1] !== 0);
+  const pills = (b.src.includes("mylibrary") ? '<span class="pill paper">Paper</span>' : "") + (b.src.includes("screvi") ? '<span class="pill kindle">Kindle</span>' : "");
+  el.innerHTML = `<p class="t">${esc(b.title)}</p><p class="a">${esc(b.author) || "Unknown author"}</p><div>${pills}</div>
+    <div class="density">${fmt(b.density)} <small>marks per 100 pages</small></div>
+    <dl style="margin-top:14px">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
+    ${b.isbn ? `<p style="margin:14px 0 0"><a href="https://openlibrary.org/isbn/${esc(b.isbn)}" target="_blank" rel="noopener">Open Library page</a></p>` : ""}`;
+}
+
+function render() {
+  for (const t of document.querySelectorAll(".tab")) t.setAttribute("aria-selected", String(t.dataset.view === state.view));
+  $("view-shelf").hidden = state.view !== "shelf";
+  $("view-signal").hidden = state.view !== "signal";
+  $("sort-wrap").hidden = state.view !== "shelf";
+  const list = filtered();
+  state.view === "shelf" ? renderShelf(list) : renderChart(list);
+  renderDetail();
+  try { localStorage.setItem("lib-prefs", JSON.stringify({ src: state.src, sort: state.sort, onlysig: state.onlysig })); } catch (e) {}
+}
+
+function select(id) { state.sel = state.sel === id ? null : id; render(); }
+
+const withSig = BOOKS.filter(b => b.signal > 0);
+$("stats").innerHTML = `<b>${BOOKS.length}</b> books · <b>${withSig.length}</b> with marks · ` +
+  `<b>${BOOKS.reduce((s, b) => s + (b.marks || 0), 0).toLocaleString()}</b> page marks · <b>${BOOKS.reduce((s, b) => s + (b.hl || 0), 0).toLocaleString()}</b> highlights`;
+$("foot").textContent = "Data: My Library app (paper books, page marks) and Screvi (Kindle highlights); page counts filled from Open Library. Updated __UPDATED__.";
+
+$("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+$("src").addEventListener("change", e => { state.src = e.target.value; render(); });
+$("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
+$("onlysig").addEventListener("change", e => { state.onlysig = e.target.checked; render(); });
+for (const t of document.querySelectorAll(".tab")) t.addEventListener("click", () => { location.hash = t.dataset.view; });
+document.addEventListener("click", e => { const t = e.target.closest("[data-id]"); if (t) select(t.dataset.id); });
+function fromHash() { state.view = location.hash === "#signal" ? "signal" : "shelf"; render(); }
+window.addEventListener("hashchange", fromHash);
+$("src").value = state.src; $("sort").value = state.sort; $("onlysig").checked = state.onlysig;
+fromHash();
+</script>
