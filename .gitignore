@@ -1,0 +1,11 @@
+# Raw exports stay local: they contain full highlight text and personal notes.
+data/raw/
+*.db
+*.xls
+*.xlsx
+My Clippings.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
