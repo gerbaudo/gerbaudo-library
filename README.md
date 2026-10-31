@@ -17,6 +17,13 @@ Published at <https://gerbaudo.github.io/gerbaudo-library> (coming soon).
   - `merge.py` — combines them into `data/books.csv` and lists doubtful matches in
     `data/needs_review.csv`; manual fixes go in `data/overrides.csv`
 
+- **Matching** (`scripts/common.py`): every book gets a stable ID — its ISBN-13 when
+  known, otherwise an `author-title` slug. Uncertain matches go to a review list
+  instead of being merged silently.
+- **Viewer**: `docs/index.html`, a single static page (shelf of spines, search,
+  and a marks-versus-pages chart) built by `build_site.py` from `docs/template.html`.
+  GitHub Pages serves it from the `docs/` folder.
+
 ## Refreshing the data
 
 ```
@@ -33,13 +40,6 @@ python build_site.py           # rebuild docs/index.html (the viewer)
 The `pages_source` column says where each page count came from: `mylibrary` (my
 own entry), `openlibrary-isbn` (that exact edition), or `openlibrary-search` (median
 across editions of the title: an estimate, fine for Kindle books).
-- **Matching** (`scripts/common.py`): every book gets a stable ID — its ISBN-13 when
-  known, otherwise an `author-title` slug. Uncertain matches go to a review list
-  instead of being merged silently.
-- **Viewer**: `docs/index.html`, a single static page (shelf of spines, search,
-  and a marks-versus-pages chart) built by `build_site.py` from `docs/template.html`.
-  GitHub Pages serves it from the `docs/` folder.
-
 ## Privacy
 
 Raw exports live in `data/raw/`, which is git-ignored: they contain full highlight
