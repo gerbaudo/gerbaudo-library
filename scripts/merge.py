@@ -7,9 +7,10 @@ Reads every data/mylibrary-*.csv snapshot (oldest first) and data/screvi.csv.
 Matching, in order:
   1. same id (ISBN-13 when known)
   2. same loose key (main title + author last name)
-Across snapshots, a match is the same book scanned again: marks keep the larger
-value. Within one snapshot, the same title with different ISBNs is kept as two
-books. Anything doubtful is listed in data/needs_review.csv for a human to decide.
+A match is the same book, kept once: within one snapshot the largest mark count
+wins, across snapshots the newer count wins. Every merge decision is written to
+data/merge_log.csv. For books in both sources (paper + Kindle), the viewer uses
+the larger of marks and highlights, never the sum.
 
 Manual decisions can go in data/overrides.csv (columns: id, field, value); they are
 applied last and win over any import.
@@ -43,46 +44,62 @@ def load(name):
 
 def main() -> None:
     books: dict[str, dict] = {}
-    by_key: dict[str, str] = {}
-    review = []
+    by_key: dict[str, list[str]] = {}
+    log = []
 
     # 1. My Library snapshots (paper books, page marks), oldest first.
-    #    A later snapshot re-scans many of the same books: match by ISBN, or by
-    #    title + author when the ISBN differs or is missing. Counters keep the
-    #    larger value (marks only grow as I read); metadata fills gaps.
+    #    Rules (decided by me, Oct 2026):
+    #      - same book = same ISBN, or same title + first author (and no clashing
+    #        volume number), even with different ISBNs: kept once
+    #      - duplicates within one snapshot: keep the largest mark count
+    #      - across snapshots: the newer snapshot's count wins when it has one
+    #    Metadata from later scans only fills gaps. Every merge is logged in
+    #    data/merge_log.csv so it can be checked.
+    def find(rid, key, title):
+        if rid in books:
+            return rid
+        return next((i for i in by_key.get(key, []) if same_volume(title, books[i]["title"])), None)
+
     snapshots = sorted(f for f in os.listdir(DATA) if re.fullmatch(r"mylibrary-.+\.csv", f))
     for snap in snapshots:
-        seen_here: dict[str, str] = {}   # key -> id, within this snapshot
-        title_here: dict[str, str] = {}  # key -> title as written in this snapshot
-        for r in load(snap):
+        rows_in = load(snap)
+        # books already known by ISBN go first, so the title/author spellings they
+        # carry in this scan are registered before the rest are matched
+        rows_in.sort(key=lambda r: r["id"] not in books)
+        for r in rows_in:
             row = {f: r.get(f, "") for f in FIELDS}
             row["sources"] = "mylibrary"
             row["pages_source"] = "mylibrary" if row["pages"] not in ("", "0") else ""
             key = match_key(r["title"], r["author"])
-            if (key in seen_here and seen_here[key] != r["id"]
-                    and same_volume(r["title"], title_here[key])):
-                # same title twice in ONE scan with different ISBNs: two editions, or two copies?
-                review.append({"id": r["id"], "other_id": seen_here[key], "title": r["title"],
-                               "reason": f"same title and author, different ISBN ({snap})"})
-            title_here.setdefault(key, r["title"])
-            existing_id = r["id"] if r["id"] in books else None
-            if (existing_id is None and key in by_key and key not in seen_here
-                    and same_volume(r["title"], books[by_key[key]]["title"])):
-                existing_id = by_key[key]  # re-scan from an earlier snapshot, different/no ISBN
-            if existing_id is None or existing_id in seen_here.values():
+            existing_id = find(r["id"], key, r["title"])
+            if existing_id is None:
+                row["_snap"] = snap
                 books[r["id"]] = row
-                by_key.setdefault(key, r["id"])
-                seen_here.setdefault(key, r["id"])
+                by_key.setdefault(key, []).append(r["id"])
                 continue
-            seen_here.setdefault(key, existing_id)
             old = books[existing_id]
+            if existing_id not in by_key.setdefault(key, []):
+                by_key[key].append(existing_id)  # remember this spelling of title/author
+            if row == {f: old.get(f, "") for f in FIELDS}:
+                continue  # identical scan
             for f in ("marks", "oneshot"):
                 a, b = to_int(old[f]), to_int(row[f])
-                if a is not None and b is not None and b < a:
-                    review.append({"id": existing_id, "other_id": "", "title": old["title"],
-                                   "reason": f"{f} went down from {a} to {b} in {snap}; kept {a}"})
-                if b is not None and (a is None or b > a):
-                    old[f] = row[f]
+                if b is None or a == b:
+                    continue
+                if old["_snap"] == snap:      # duplicate inside one scan: largest wins
+                    keep = max(a or 0, b)
+                    note = "duplicate in one scan, kept the largest"
+                else:                          # later scan: newer wins
+                    keep = b
+                    note = "newer scan wins"
+                if a is not None:
+                    log.append({"id": existing_id, "other_id": r["id"], "title": old["title"],
+                                "decision": f"{f}: {a} vs {b} -> {keep} ({note}, {snap})"})
+                old[f] = str(keep)
+            if r["id"] != existing_id:
+                log.append({"id": existing_id, "other_id": r["id"], "title": old["title"],
+                            "decision": f"merged as the same book ({snap})"})
+            old["_snap"] = snap
             old["read"] = str(max(to_int(old["read"]) or 0, to_int(row["read"]) or 0))
             for f in ("isbn", "pages", "published", "categories"):
                 if not old[f] or old[f] == "0":
@@ -95,8 +112,9 @@ def main() -> None:
     # 2. Screvi: Kindle/ebook highlights, matched by title + author
     for r in load("screvi.csv"):
         key = match_key(r["title"], r["author"])
-        target = books.get(by_key.get(key, ""))
-        if target and same_volume(r["title"], target["title"]):
+        tid = find(None, key, r["title"])
+        target = books.get(tid) if tid else None
+        if target:
             target["highlights"] = r["highlights"]
             target["asin"] = target["asin"] or r["asin"]
             target["sources"] += ";screvi"
@@ -105,7 +123,7 @@ def main() -> None:
             row.update(id=r["id"], asin=r["asin"], title=r["title"], author=r["author"],
                        highlights=r["highlights"], read="1", sources="screvi")
             books[r["id"]] = row
-            by_key[key] = r["id"]
+            by_key.setdefault(key, []).append(r["id"])
 
     # 3. Open Library cache fills gaps only (never overwrites imported values)
     for o in load("openlibrary.csv"):
@@ -125,17 +143,17 @@ def main() -> None:
 
     rows = sorted(books.values(), key=lambda b: (b["author"].split()[-1:] or [""])[0].lower())
     with open(os.path.join(DATA, "books.csv"), "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=FIELDS)
+        w = csv.DictWriter(fh, fieldnames=FIELDS, extrasaction="ignore")
         w.writeheader()
         w.writerows(rows)
-    with open(os.path.join(DATA, "needs_review.csv"), "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=["id", "other_id", "title", "reason"])
+    with open(os.path.join(DATA, "merge_log.csv"), "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["id", "other_id", "title", "decision"])
         w.writeheader()
-        w.writerows(review)
+        w.writerows(log)
 
     both = sum(1 for b in rows if ";" in b["sources"])
     print(f"books.csv: {len(rows)} books ({both} in both sources); "
-          f"needs_review.csv: {len(review)} items")
+          f"merge_log.csv: {len(log)} decisions")
 
 
 if __name__ == "__main__":

@@ -172,7 +172,8 @@ footer { margin-top: 36px; font: .75rem var(--mono); color: var(--muted); }
 <script id="books" type="application/json">__BOOKS_JSON__</script>
 <script>
 const BOOKS = JSON.parse(document.getElementById("books").textContent).map(b => {
-  const signal = (b.marks || 0) + (b.hl || 0);
+  // paper marks and Kindle highlights of the same book: take the larger, never the sum
+  const signal = Math.max(b.marks || 0, b.hl || 0);
   return { ...b, signal, kindle: b.src.includes("screvi") && !b.src.includes("mylibrary"),
     density: signal && b.pages ? signal / b.pages * 100 : null };
 });

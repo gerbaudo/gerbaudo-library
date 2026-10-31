@@ -42,7 +42,8 @@ def volume(title: str) -> str:
 def first_author_last_name(author: str) -> str:
     """'Foster Provost and Tom Fawcett' -> 'Provost'; 'Tok, Amit Jain' -> 'Tok'."""
     first = re.split(r"\s+and\s+|,|;|&", author or "")[0].strip()
-    return first.split()[-1] if first else ""
+    words = [w for w in first.split() if w.lower().strip(".") not in ("jr", "sr", "ii", "iii")]
+    return words[-1] if words else ""
 
 
 def match_key(title: str, author: str = "") -> str:

@@ -1,0 +1,20 @@
+id,other_id,title,decision
+9788879591522,9788879591379,Fisica,merged as the same book (mylibrary-2021.csv)
+9781448190690,9780099590088,Sapiens,"marks: 30 vs 56 -> 56 (duplicate in one scan, kept the largest, mylibrary-2021.csv)"
+9781448190690,9780099590088,Sapiens,"oneshot: 50 vs 24 -> 50 (duplicate in one scan, kept the largest, mylibrary-2021.csv)"
+9781448190690,9780099590088,Sapiens,merged as the same book (mylibrary-2021.csv)
+9780750308649,9780750309509,Gauge Theories in Particle Physics,merged as the same book (mylibrary-2021.csv)
+9788806400149,9788806141134,La malora (Nuovi coralli) (Italian Edition),merged as the same book (mylibrary-2021.csv)
+9788193245279,9788193245279,Data Structures and Algorithms Made Easy,"marks: 0 vs 2 -> 2 (newer scan wins, mylibrary-202610.csv)"
+9780954161798,9780954161798,An Introduction to GCC,"marks: 10 vs 5 -> 5 (newer scan wins, mylibrary-202610.csv)"
+9781491912058,9781491912058,Python Data Science Handbook,"marks: 30 vs 15 -> 15 (newer scan wins, mylibrary-202610.csv)"
+9781491907337,9781491907337,Think Stats: Exploratory Data Analysis,"marks: 1 vs 3 -> 3 (newer scan wins, mylibrary-202610.csv)"
+9781449373320,9781449373320,Foundations for Architecting Data Solutions: Managing Successful Data Projects,"marks: 14 vs 18 -> 18 (newer scan wins, mylibrary-202610.csv)"
+9781476771557,9781476771557,"Fallen Leaves: Last Words on Life, Love, War, and God","marks: 20 vs 21 -> 21 (newer scan wins, mylibrary-202610.csv)"
+9780749395100,9780749395100,How to Travel with a Salmon,"marks: 10 vs 11 -> 11 (newer scan wins, mylibrary-202610.csv)"
+9780140243512,9780140243512,The Road Ahead,"marks: 26 vs 20 -> 20 (newer scan wins, mylibrary-202610.csv)"
+9780201889543,stroustrup-the-c-programming-language,The C++ Programming Language (3rd Edition),merged as the same book (mylibrary-202610.csv)
+9780961392109,9781930824133,The Visual Display of Quantitative Information,merged as the same book (mylibrary-202610.csv)
+9780961392116,9781930824140,Envisioning Information,merged as the same book (mylibrary-202610.csv)
+9780205313426,9781504093545,The Elements of Style (4th Edition),merged as the same book (mylibrary-202610.csv)
+9780241991411,9780241491515,A Promised Land,merged as the same book (mylibrary-202610.csv)
