@@ -22,7 +22,7 @@ from common import match_key
 
 DATA = os.path.join(os.path.dirname(__file__), "..", "data")
 FIELDS = ["id", "isbn", "asin", "title", "author", "pages", "published", "categories",
-          "read", "marks", "oneshot", "highlights", "sources"]
+          "read", "marks", "oneshot", "highlights", "sources", "pages_source"]
 
 
 def load(name):
@@ -42,6 +42,7 @@ def main() -> None:
     for r in load("mylibrary.csv"):
         row = {f: r.get(f, "") for f in FIELDS}
         row["sources"] = "mylibrary"
+        row["pages_source"] = "mylibrary" if row["pages"] not in ("", "0") else ""
         if r["id"] in books:
             if all(books[r["id"]][f] == row[f] for f in FIELDS):
                 continue  # exact duplicate scan
@@ -70,7 +71,18 @@ def main() -> None:
             books[r["id"]] = row
             by_key[key] = r["id"]
 
-    # 3. Manual overrides win
+    # 3. Open Library cache fills gaps only (never overwrites imported values)
+    for o in load("openlibrary.csv"):
+        b = books.get(o["id"])
+        if not b:
+            continue
+        if b["pages"] in ("", "0") and o["pages"]:
+            b["pages"] = o["pages"]
+            b["pages_source"] = "openlibrary-" + o["method"]
+        if not b["isbn"] and o["isbn"]:
+            b["isbn"] = o["isbn"]
+
+    # 4. Manual overrides win
     for o in load("overrides.csv"):
         if o["id"] in books and o["field"] in FIELDS:
             books[o["id"]][o["field"]] = o["value"]

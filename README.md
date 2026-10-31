@@ -25,7 +25,13 @@ cd scripts
 python import_mylibrary.py ../data/raw/mylibrary.db ../data/mylibrary.csv
 python import_screvi.py ../data/raw/screvi-highlights-YYYY-MM-DD.csv ../data/screvi.csv
 python merge.py
+python enrich_openlibrary.py   # look up missing pages/ISBNs (cached in data/openlibrary.csv)
+python merge.py                # re-merge to apply them
 ```
+
+The `pages_source` column says where each page count came from: `mylibrary` (my
+own entry), `openlibrary-isbn` (that exact edition), or `openlibrary-search` (median
+across editions of the title: an estimate, fine for Kindle books).
 - **Matching** (`scripts/common.py`): every book gets a stable ID — its ISBN-13 when
   known, otherwise an `author-title` slug. Uncertain matches go to a review list
   instead of being merged silently.
