@@ -1,6 +1,10 @@
 id,isbn,asin,title,author,pages,published,categories,read,marks,oneshot,highlights,sources,pages_source
 unknown-particle-physics-booklet-july-2008,,,Particle Physics Booklet July 2008,,,,,0,,,,mylibrary,
 9781143478901,9781143478901,,Le bilan du monde,,218,2020,,0,,,,mylibrary,mylibrary
+unknown-deploying-machine-learning-models-for,,,Deploying Machine Learning Models for Developers and Data Scientists,,,,,1,,,,manual,
+unknown-voies-de-communication-dans-les,,,Voies de communication dans les montagnes de l'Ain,,,,,1,,,,manual,
+unknown-au-masculin-sport-sante-bien,,,"Au masculin: Sport, santé, bien-être après 40 ans",,,,,1,,,,manual,
+unknown-storia-del-piemonte-dalla-preistoria,,,Storia del Piemonte. Dalla preistoria alla globalizzazione,,,,,1,,,,manual,
 9782203090132,9782203090132,,"L'histoire de France en BD, Integrale : De la Prehistoire Ã nos jours ! [ History of France in Comic Book Format ] (French Edition)",Bruno Heitz (Illustrations),286,,,0,,,,mylibrary,openlibrary-isbn
 -do-more-great-work,,B003HMOW8E,Do More Great Work,"Michael Bungay Stanier, Seth Godin, Michael Port, and Dave Ulrich ; Chris Guillebeau ; Leo Babauta ;",,,,1,,,7,screvi,
 9788804553687,9788804553687,,Ultime lettere di condannati a morte e di deportati della resistenza (Italian Edition),Aavv,,28/03/2006,,0,,,,mylibrary,
@@ -38,7 +42,7 @@ beveridge-the-art-of-scientific-investigation,9780394701295,,The Art of Scientif
 9791036357053,9791036357053,,L'Histoire du monde en BD,Pascale Bouchié,,,,0,,,,mylibrary,
 9788804483472,9788804483472,,Fahrenheit 451 / Cronache Markiane,Ray Bradbury,506,,,0,,,,mylibrary,mylibrary
 9788804489450,9788804489450,,Il pellegrino dalle braccia d'inchiostro,Enrico Brizzi,316,2007,,0,,,,mylibrary,mylibrary
-brooks-the-mythical-man-month,,,The Mythical Man-Month,Frederick P. Brooks,,,,1,,,,manual,
+brooks-the-mythical-man-month,9780201006506,,The Mythical Man-Month,Frederick P. Brooks,195,,,1,,,,manual,openlibrary-search
 9780143126027,9780143126027,,A History of the World in 12 Maps,Jerry Brotton,544,28/10/2014,,1,1,5,,mylibrary,mylibrary
 9780552997041,9780552997041,,A Short History of Nearly Everything,Bill Bryson,686,2004,Science,0,,,,mylibrary,mylibrary
 9781616085605,9781616085605,,"Ultimate Book of Everyday Knots: (over 15,000 copies sold)",Budworth,160,,,0,,,,mylibrary,openlibrary-search
@@ -78,12 +82,14 @@ close-the-new-cosmic-onion,9781584887980,B000SFM1A4,The New Cosmic Onion,Frank C
 collodi-le-avventure-di-pinocchio,9788711093580,,Le avventure di Pinocchio,Carlo Collodi,203,,,0,,,,mylibrary,openlibrary-search
 9781862077348,9781862077348,,A Brief History of the Human Race,Michael Cook,368,2005,Civilization,0,,,,mylibrary,mylibrary
 9788871007168,9788871007168,,Le Cid,Corneille,136,,,0,,,,mylibrary,openlibrary-search
-covert-how-to-make-sense-of,,,How to Make Sense of Any Mess,Abby Covert,,,,1,,,,manual,
+covert-how-to-make-sense-of,9781500615994,,How to Make Sense of Any Mess,Abby Covert,174,,,1,,,,manual,openlibrary-search
 9780140239744,9780140239744,,Quarantine,Jim Crace,256,,,0,,,,mylibrary,mylibrary
 9780802130723,9780802130723,,100 Selected Poems,Edward Estlin Cummings,121,1959,Poetry,0,,,,mylibrary,mylibrary
 9781770857926,9781770857926,,The Infographic History of the World,Valentina D'Efilippo,224,20/09/2016,History,0,,,,mylibrary,mylibrary
 9780500285268,9780500285268,,Graphic Design School,David Dabner,192,2004,Commercial art,0,,,,mylibrary,mylibrary
 9780140328882,9780140328882,,The Wonderful Story of Henry Sugar (Plus),Dahl,240,1988,,0,3,,,mylibrary,openlibrary-isbn
+dalio-principles-life-and-work,9781501124051,,Principles: Life and Work,Ray Dalio,592,,,1,,,,manual,openlibrary-search
+dalio-principles-for-dealing-with-the,,,Principles for Dealing with the Changing World Order: Why Nations Succeed or Fail,Ray Dalio,,,,1,,,,manual,
 9781617295607,9781617295607,,Data Science with Python and Dask,Jesse Daniel,296,30/07/2019,Computers,1,2,10,,mylibrary,mylibrary
 9780192853455,9780192853455,,Economics,Partha Dasgupta,172,22/02/2007,Business & Economics,0,12,,,mylibrary,mylibrary
 9780133902839,9780133902839,,Bayesian Methods for Hackers: Probabilistic Programming and Bayesian Inference (Addison-Wesley Data & Analytics),Cameron Davidson-Pilon,256,12/10/2015,,1,4,6,,mylibrary,mylibrary
@@ -205,6 +211,7 @@ howey-wool-omnibus-edition-kindle-in,,B0071XO8RA,Wool Omnibus Edition [Kindle in
 huxley-the-origin-of-species-150th,9780393978674,B002JF1N0A,The Origin Of Species: 150th Anniversary Edition,Charles Darwin and Julian Huxley,146,,,1,,,4,screvi,openlibrary-search
 huyen-designing-machine-learning-systems-an,9781098107963,,Designing Machine Learning Systems: An Iterative Process for Production-Ready Applications,Chip Huyen,386,05/2022,,0,,,,mylibrary,openlibrary-search
 9781098166304,9781098166304,,AI Engineering,Chip Huyen,350,2024,,0,,,,mylibrary,openlibrary-isbn
+isaacson-benjamin-franklin-an-american-life,9780743258074,,Benjamin Franklin: An American Life,Walter Isaacson,590,,,1,,,,manual,openlibrary-search
 9782706615061,9782706615061,,"Guide du bois, de la menuiserie et de l'ébénisterie",Albert Jackson,319,1991,,1,20,40,,mylibrary,mylibrary
 9782493343642,9782493343642,,"Toppi, il maestro",Michel Jans,,,,0,,,,mylibrary,
 9781617290213,9781617290213,,Learn Windows PowerShell in a Month of Lunches,Jones,309,2011,,0,,,,mylibrary,openlibrary-isbn
@@ -224,6 +231,7 @@ kahneman-thinking-fast-and-slow,9780385676519,B00555X8OA,"Thinking, Fast and Slo
 9781098115784,9781098115784,,Machine Learning Design Patterns,Valliappa Lakshmanan,400,2020,,0,12,,,mylibrary,openlibrary-isbn
 9780750628969,9780750628969,,Mechanics,L D Landau,170,15/01/1976,Science,1,10,5,,mylibrary,mylibrary
 9788864732084,9788864732084,,"3: Meccanica quantistica ; Teoria non relativistica / Lev D. Landau, Evgenij M. Lifšits",Lev Davidovič Landau,,2010,,1,1,4,,mylibrary,
+leighton-surely-you-re-joking-mr,9780393316049,,"""Surely You're Joking, Mr. Feynman!"": Adventures of a Curious Character",Richard P. Feynman and Ralph Leighton,352,,,1,,,,manual,openlibrary-search
 9789083016610,9789083016610,,"Rock, Paper, Scissors: The Instant Leadership Solution",Fred Lennox,190,28/09/2019,Business & Economics,0,,,,mylibrary,mylibrary
 9788806176556,9788806176556,,Se questo è un uomo,Primo Levi,209,1958,,0,,,,mylibrary,openlibrary-isbn
 9788806272104,9788806272104,,Il sistema periodico,Primo Levi,238,12/04/1975,,0,8,,,mylibrary,openlibrary-search
@@ -243,14 +251,17 @@ maccaw-the-little-book-on-coffeescript,9781449325558,B006ZYZCRQ,The Little Book 
 9788806178864,9788806178864,,Lettere di condannati a morte della Resistenza italiana. 8 settembre 1943-25 aprile 1945,Piero Malvezzi,357,1961,,0,,,,mylibrary,openlibrary-search
 9788804331728,9788804331728,,I promessi sposi,Alessandro Manzoni,673,1990,Fiction,0,,,,mylibrary,mylibrary
 9781783962433,9781783962433,,Prisoners of Geography,Tim Marshall,320,2016,Geopolitics,0,16,,,mylibrary,mylibrary
+marshall-the-power-of-geography-ten,9781783966028,,The Power of Geography: Ten Maps That Reveal the Future of Our World,Tim Marshall,304,,,1,,,,manual,openlibrary-search
 9788806199920,9788806199920,,Antologia di Spoon River. Testo inglese a fronte,Edgar Lee Master,,,,0,,,,mylibrary,
 9782368466360,9782368466360,,Primo Levi,Matteo Mastragostino,125,13/04/2017,,0,,,,mylibrary,openlibrary-search
 9782376713340,9782376713340,,Map Stories,Francisca Matteoli,173,,,0,,,,mylibrary,openlibrary-search
 9788879591522,9788879591522,,Fisica,Paolo Mazzoldi,792,1998,Science,1,1,10,,mylibrary,mylibrary
 9780007492893,9780007492893,,Information is Beautiful,David McCandless,255,2012,Reference,1,10,30,,mylibrary,mylibrary
+mccann-super-thinking-the-big-book,9780241336359,,Super Thinking: The Big Book of Mental Models,Gabriel Weinberg and Lauren McCann,352,,,1,,,,manual,openlibrary-search
 9780984782802,9780984782802,,Cracking the Coding Interview,Gayle Laakmann McDowell,500,2011,Business & Economics,0,,,,mylibrary,mylibrary
 9782889012626,9782889012626,,Compañeros de la emigración! Lavoratori emigrati!,Alain Melo,,,,0,,,,mylibrary,
 9782851320681,9782851320681,,Dubout,Michel; Frédéric Dard Melot,,,,0,,,,mylibrary,
+meyer-the-culture-map-decoding-how,9781322543871,,"The Culture Map: Decoding How People Think, Lead, and Get Things Done Across Cultures",Erin Meyer,283,,,1,,,,manual,openlibrary-search
 9780201633719,9780201633719,,More Effective C++: 35 New Ways to Improve Your Programs and Designs,Scott Meyers,318,29/12/1995,,1,30,20,,mylibrary,mylibrary
 9780321334879,9780321334879,,Effective C++,Scott Meyers,297,2005,Computers,1,40,20,,mylibrary,mylibrary
 meyers-effective-stl,9780321545183,B0019HW0K6,Effective STL,Scott Meyers,274,,,1,,,11,screvi,openlibrary-search
@@ -281,6 +292,7 @@ neumann-the-computer-and-the-brain,9780300181111,,The Computer and the Brain,Joh
 9780596510046,9780596510046,,Beautiful Code,Andy Oram,593,2011,,0,10,,,mylibrary,openlibrary-isbn
 9780451526342,9780451526342,,Animal Farm: 75th Anniversary Edition,George Orwell,140,06/04/2004,,0,,,,mylibrary,mylibrary
 osherove-notes-to-a-software-team,,B00EP03O5Y,Notes to a Software Team Leader,Roy Osherove,,,,1,,,20,screvi,
+ousterhout-a-philosophy-of-software-design,9781732102217,,A Philosophy of Software Design,John Ousterhout,193,,,1,,,,manual,openlibrary-search
 9782010210402,9782010210402,,Guide pratique du vin 100397,Ribereau Gayon P,,,,0,,,,mylibrary,
 9780691195780,9780691195780,,The Little Book of Cosmology,Page,152,2020,,0,8,,,mylibrary,openlibrary-isbn
 9780745622163,9780745622163,,A Political Life: Norberto Bobbio,Editor-Alberto Papuzzi,224,08/11/2002,,0,,,,mylibrary,openlibrary-isbn
@@ -340,8 +352,8 @@ saramago-il-vangelo-secondo-gesu-cristo,9788807885341,,Il Vangelo secondo Gesù 
 9780252725487,9780252725487,,The Mathematical Theory of Communication,Shannon,144,1972,,1,10,15,,mylibrary,openlibrary-isbn
 sharpe-the-intelligent-portfolio,9780470228043,B003VWCBVA,The Intelligent Portfolio,Christopher L. Jones and William F. Sharpe,,,,1,,,55,screvi,
 9780596000257,9780596000257,,LINUX in A Nutshell: A Desktop Quick Reference (3rd Edition),Ellen Siever,816,,,0,,,,mylibrary,mylibrary
-signol-les-enfants-des-justes,,,Les enfants des justes,Christian Signol,,,,1,,,,manual,
-signol-une-si-belle-ecole,,,Une si belle école,Christian Signol,,,,1,,,,manual,
+signol-les-enfants-des-justes,9782226244239,,Les enfants des justes,Christian Signol,279,,,1,,,,manual,openlibrary-search
+signol-une-si-belle-ecole,9782298045161,,Une si belle école,Christian Signol,348,,,1,,,,manual,openlibrary-search
 9780062199577,9780062199577,,The Ten-Day MBA 4th Ed.,Steven A. Silbiger,448,24/07/2012,Business & Economics,1,10,12,,mylibrary,mylibrary
 9780141975658,9780141975658,,The Signal and the Noise,Nate Silver,534,2012,,0,,,,mylibrary,openlibrary-isbn
 9791037506863,9791037506863,,"L'Incroyable histoire du vin - De la préhistoire à nos jours, 10 000 ans d'aventure",Benoist Simmat,,2022,,0,,,,mylibrary,
@@ -410,7 +422,9 @@ wiesel-night-night-trilogy,9788959132201,B0071VUXXA,Night (Night Trilogy),Elie W
 9788871226460,9788871226460,,Il ritratto di Dorian Gray,Oscar Wilde,,20/06/1890,,0,,,,mylibrary,
 9780750663700,9780750663700,,The Circuit Designer's Companion,Tim Williams,360,,,1,2,10,,mylibrary,mylibrary
 9781631491146,9781631491146,,The Meaning of Human Existence,Edward O. Wilson,208,2015,Health & Fitness,0,,,,mylibrary,mylibrary
+wilson-consilience-the-unity-of-knowledge,9780679768678,,Consilience: The Unity of Knowledge,Edward O. Wilson,376,,,1,,,,manual,openlibrary-search
 wilson-on-human-nature,9780553262155,B00AQLFQKW,On Human Nature,Edward O. Wilson,260,,,1,,,53,screvi,openlibrary-search
 9788807818202,9788807818202,,Al suo barbiere Einstein la raccontava così,Robert L. Wolke,204,2004,Science,0,,,,mylibrary,mylibrary
+yoskovitz-lean-analytics-use-data-to,9781449335724,,Lean Analytics: Use Data to Build a Better Startup Faster,Alistair Croll and Benjamin Yoskovitz,440,,,1,,,,manual,openlibrary-search
 9780964729230,9780964729230,,The Shack,William P. Young,256,01/07/2008,Fiction,0,,,,mylibrary,mylibrary
 9780691010199,9780691010199,,Quantum Field Theory in a Nutshell,A. Zee,518,2003,Science,1,6,8,,mylibrary,mylibrary
