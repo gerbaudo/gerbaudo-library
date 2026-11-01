@@ -191,7 +191,7 @@ footer { margin-top: 36px; font: .75rem var(--mono); color: var(--muted); }
         </div>
       </div>
       <div id="view-history" hidden>
-        <p class="intro">The books I read each year, with a line or two on what I took from them. Underlined titles are the ones I'd call must-reads.</p>
+        <p class="intro">The books I read each year, with a line or two on what I took from them. Underlined titles are the ones I'd call must-reads. When I didn't note the year, it's the year I bought the book.</p>
         <div id="history"></div>
       </div>
     </section>
@@ -348,7 +348,7 @@ function renderDetail() {
   ].filter(r => r[1] !== "" && r[1] != null && r[1] !== 0);
   const pills = (b.src.includes("mylibrary") ? '<span class="pill paper">Paper</span>' : "") + (b.src.includes("screvi") ? '<span class="pill kindle">Kindle</span>' : "");
   const must = b.must ? '<span class="pill must">Must-read</span>' : "";
-  const readIn = b.years ? `<p class="hint" style="margin-top:10px">Read in ${b.years.split(";").join(" and ")}</p>` : "";
+  const readIn = b.years ? `<p class="hint" style="margin-top:10px">Read in ${b.years.split(";").join(" and ")}${b.ysrc === "amazon-purchase" ? " (year bought)" : ""}</p>` : "";
   const hasLong = PRIVATE && PRIVATE.ids.includes(b.id);
   el.innerHTML = `<p class="t">${esc(b.title)}</p><p class="a">${esc(b.author) || "Unknown author"}</p><div>${pills}${must}</div>
     ${readIn}${b.summary ? `<p class="summary">${esc(b.summary)}</p>` : ""}

@@ -42,6 +42,7 @@ def main():
         "marks": num(r["marks"]) or 0, "oneshot": num(r["oneshot"]) or 0, "hl": num(r["highlights"]) or 0,
         "src": r["sources"],
         "years": notes.get(r["id"], {}).get("years_read", ""),
+        "ysrc": notes.get(r["id"], {}).get("year_source", ""),
         "must": notes.get(r["id"], {}).get("must_read") == "1",
         "todo": notes.get(r["id"], {}).get("todo") == "1",
         "summary": notes.get(r["id"], {}).get("summary", ""),

@@ -1,63 +1,118 @@
-id,title,years_read,must_read,todo,summary_status,summary
-9780349119854,The Undercover Economist,2017,1,0,mine,"Economics explained through everyday questions, from who pays for your coffee to why poor countries are poor: prices reveal scarcity and value, and institutions matter more than policies. In the end, economics is about people."
-9780061234002,Freakonomics Rev Ed,2017,0,1,,
-9781491912058,Python Data Science Handbook,2017,0,0,,
-9781449361327,Data Science for Business,2017,0,0,mine,"Less technical depth than Vanderplas, but a good overview of the recurring problems in data science for business. The expected-value framework is very useful."
-9781449358655,Doing Data Science,2017,0,0,mine,"Not worth it. No business acumen, no technical insights: only guest lectures from a class."
-9781119002253,Storytelling with Data,2017,0,0,mine,"Useful information, but diluted over a book when it could be a blog post."
-9780451157447,Carrie,2017,0,0,mine,"A fun story to read: a girl with telekinetic powers gets pissed, and destroys the town where she lives."
-9780140328882,The Wonderful Story of Henry Sugar (Plus),2017,0,0,mine,Henry Sugar finds a way to see without the eyes. Plus six more stories.
-history-charles-darwin-a-life-from,Charles Darwin: A Life from Beginning to End,2016,0,0,mine,"Darwin (1809–1882) came from a privileged family. Not brilliant in school, but persistent in his curiosity and method. And lucky."
-history-the-black-death,The Black Death,2016,0,0,mine,The bubonic plague (1345–1353) in one hour. It killed about one third of the European and Asian population.
-9780749395100,How to Travel with a Salmon,2016,0,0,mine,Funny short read.
-9780552997041,A Short History of Nearly Everything,2016,1,0,mine,"If you're interested in history and science, you must read this book. Bryson explains how scientific ideas came about, and how the people who came up with them were often special human beings."
-9780691172477,Ethics in the Real World,2016,1,1,,
-9780544668256,Thing Explainer,2016,0,0,,
-brooks-the-mythical-man-month,The Mythical Man-Month,2016,0,1,,
-9780691148908,Reinventing Discovery,2016,0,0,mine,"Read half of it, then stopped. It has some interesting points, but it can be quite verbose for what I get out of it."
-card-ender-s-game-ender-quintet,Ender's Game (Ender Quintet Book 1),2016,0,0,,
-9781607746621,What Color is Your Parachute?,2016,0,0,mine,Somewhat useful to force you to think about what you want.
-9780192853622,The First World War,2016,0,0,,
-cannon-command-line-kung-fu,Command Line Kung Fu,2016,0,0,,
-9781439199190,How to Win Friends and Influence People,2016,0,0,,
-9780393337112,Physics for Future Presidents: The Science Behind the Headlines,2016,0,0,,
-9780393345100,Energy for Future Presidents,2016,0,0,,
-9781439149959,The Lessons of History,2016,1,0,mine,"History in a hundred pages: biology, morals, religion, economics and war. Progress is the increasing control of the environment by life, and equal educational opportunity is the best a fair society can offer."
-9780099302780,"Guns, Germs and Steel",2015,1,1,,
-slatkin-effective-python,Effective Python,2015,1,0,,
-lorimer-letters-from-a-self-made,"Letters from a Self-Made Merchant to His Son Being the Letters written by John Graham, Head of the House of Graham & Company, Pork-Packers in Chicago, ... known to his intimates as ""Piggy.""",2015,1,1,mine,"A bit dated (sometimes it can be racist), but most of it is wise and pragmatic."
-9780671212094,How to Read a Book,2014;2015,0,0,mine,"Good book, should be read in high school. Start from the basics (title, table of contents), read carefully or move on, skim, underline, annotate."
-9780226149653,Atoms in the Family,2015,0,0,mine,"Biography of Enrico Fermi written by his wife. He was very competitive, even with his wife, a bit macho (not surprising for someone born in 1901), and super smart."
-covert-how-to-make-sense-of,How to Make Sense of Any Mess,2015,0,0,mine,"Lots of fluff, no content."
-beveridge-the-art-of-scientific-investigation,The Art of Scientific Investigation,2015,1,1,,
-wilson-on-human-nature,On Human Nature,2015,1,0,mine,"What defines a human being, and how much of it comes from evolutionary biology? Some things it said crystal clear that I already thought; others it changed my view on."
-signol-les-enfants-des-justes,Les enfants des justes,2014,0,0,mine,"In Nazi-occupied France, Virgile and Victoria, two simple people, take care of two Jewish kids. Mi ricorda molto Fenoglio: una scrittura schietta e semplice."
-clarke-against-the-fall-of-night,Against the Fall of Night (Arthur C. Clarke Collection,2014,0,0,mine,Really good sci-fi novel. A gate is found that connects a society with the forgotten outside world.
-simsion-the-rosie-project-a-novel,The Rosie Project: A Novel (Don Tillman Book 1),2014,0,0,mine,"A Sheldon-Cooper-type professor sets up a questionnaire to find the best life partner, and falls for someone who fits none of the criteria. Funny and smart."
-signol-une-si-belle-ecole,Une si belle école,2014,0,0,mine,"Primary school teachers in post-war rural France, where school is a duty that harsh conditions keep people from appreciating. It reminds me of the life my parents went through."
-strauss-rules-of-the-game,Rules of the Game,2014,0,0,mine,Follow-up of The Game. Not as entertaining.
-robbins-get-it-done-guy-s,Get-It-Done Guy's 9 Steps to Work Less and Do More,2014,0,1,,
-kahneman-thinking-fast-and-slow,"Thinking, Fast and Slow",2014,1,0,mine,"Our brain behaves as if there were two actors: a fast, intuitive one shaped by evolution, and a slow, rational one. Their interaction leads to systematic biases, and the only defence is to train yourself to recognize them."
-roach-bonk-the-curious-coupling-of,Bonk: The Curious Coupling of Science and Sex,2013,0,0,mine,"The science of sex, from animals to humans, from bed to MRI. Interesting and humorous."
-smith-the-flinch,The Flinch,2013,0,0,mine,"We are used to being comfortable. Sometimes it's good to take risks, and the way to do it rationally is to train yourself to flinch."
-9781841957517,The Game,2013,0,0,mine,"Pick-up artists' adventures. An interesting perspective on human interactions, and on how we are programmed to react."
-feathers-working-effectively-with-legacy-code,Working Effectively with Legacy Code (Robert C. Martin Series),2013,0,0,mine,"Legacy code is always there, you have to deal with it: unit testing, strategies to refactor, strategies to clean up. Very useful."
-9780142002360,Shackleton's Way: Leadership Lessons from the Great Antarctic Explorer,2013,0,0,mine,Epic. The story of a captain and a leader.
-9780226284279,Megawatts and Megatons,2013,0,0,mine,"Plenty of useful numbers and facts. Perhaps a bit outdated, but still very interesting."
-9782253135722,La vie à fil tendu,2013,0,0,mine,Short and well written. Two parts: the human being and the scientist.
-taleb-fooled-by-randomness,Fooled by Randomness,2013,0,0,mine,"Randomness is there in the markets, so there's very little we can do to predict them; realizing it protects you from easy-gain fairy tales. Good read."
-osherove-notes-to-a-software-team,Notes to a Software Team Leader,2013,0,0,mine,"Good book, but I don't remember anything. Look at the notes."
-druyan-the-varieties-of-scientific-experience,The Varieties of Scientific Experience,2013,1,0,mine,"Wonderful and humbling: science framed within the cosmos, then what it means to have a religious experience. Sagan makes simple, crystal-clear points, without preconceptions, and treats believers with respect, almost tenderness. It should be read in schools."
-thiongo-dreams-in-a-time-of,Dreams in a Time of War: A Childhood Memoir,2013,0,0,mine,"Ngugi grows up in rural Kenya in 1934–1950 and, despite poverty, war, colonialism and racism, manages to go to school: the support people give each other makes apparently impossible dreams happen."
-fowler-the-passionate-programmer,The Passionate Programmer,2013,0,0,,
-gaiman-the-ultimate-hitchhiker-s-guide,The Ultimate Hitchhiker's Guide to the Galaxy,2013,0,0,mine,Fun. 42. Don't panic.
-asimov-foundation,Foundation,2013,1,0,mine,One of the best sci-fi I've ever read. Science in the future is so advanced that it can predict when revolutions and changes will happen.
-wiesel-night-night-trilogy,Night (Night Trilogy),2013,1,0,mine,Humanity pushed to its limits.
-pike-the-practice-of-programming,The Practice of Programming,2011,0,0,mine,"Habits and tips that seem common sense once you see them written down: good naming, clean interfaces, systematic testing, profile before optimizing. This book should be read by everyone writing code."
-singer-the-life-you-can-save,The Life You Can Save,2011,1,0,mine,"Compelling: poverty in the world has jaw-dropping figures, you are in a privileged top 1%, and a solution is possible if you play your role. After reading it you won't look at your problems the same way."
-saramago-il-vangelo-secondo-gesu-cristo,Il Vangelo secondo Gesù Cristo,2011,0,0,,
-9788806178864,Lettere di condannati a morte della Resistenza italiana. 8 settembre 1943-25 aprile 1945,2011,0,0,,
-9788804553687,Ultime lettere di condannati a morte e di deportati della resistenza (Italian Edition),2011,0,0,,
-camus-l-etranger,L'Étranger,2010,1,0,mine,"Uno dei libri migliori che abbia letto. Una trama breve e scarna, ma un libro che fa pensare molto, e che colpisce al ventre quando meno te lo aspetti."
-9780060850524,Brave New World,2010,1,0,mine,"A dystopia driven by pragmatism and coldness: family ties reduced to the minimum, emotions regarded as dangerous, happiness ensured by the state with drugs. Its strength is how accurately it describes that future society."
-revelli-il-mondo-dei-vinti,Il mondo dei vinti,2010,0,0,mine,"85 testimonianze dei poveri delle campagne cuneesi, raccolte nel 1970–72: un secolo di storia, dall'unità d'Italia allo sbarco sulla Luna, raccontato dai vinti. Un quadro completamente diverso da quello studiato a scuola."
+id,title,years_read,year_source,must_read,todo,summary_status,summary
+9780349119854,The Undercover Economist,2017,reading-list,1,0,mine,"Economics explained through everyday questions, from who pays for your coffee to why poor countries are poor: prices reveal scarcity and value, and institutions matter more than policies. In the end, economics is about people."
+9780061234002,Freakonomics Rev Ed,2017,reading-list,0,1,,
+9781491912058,Python Data Science Handbook,2017,reading-list,0,0,,
+9781449361327,Data Science for Business,2017,reading-list,0,0,mine,"Less technical depth than Vanderplas, but a good overview of the recurring problems in data science for business. The expected-value framework is very useful."
+9781449358655,Doing Data Science,2017,reading-list,0,0,mine,"Not worth it. No business acumen, no technical insights: only guest lectures from a class."
+9781119002253,Storytelling with Data,2017,reading-list,0,0,mine,"Useful information, but diluted over a book when it could be a blog post."
+9780451157447,Carrie,2017,reading-list,0,0,mine,"A fun story to read: a girl with telekinetic powers gets pissed, and destroys the town where she lives."
+9780140328882,The Wonderful Story of Henry Sugar (Plus),2017,reading-list,0,0,mine,Henry Sugar finds a way to see without the eyes. Plus six more stories.
+history-charles-darwin-a-life-from,Charles Darwin: A Life from Beginning to End,2016,reading-list,0,0,mine,"Darwin (1809–1882) came from a privileged family. Not brilliant in school, but persistent in his curiosity and method. And lucky."
+history-the-black-death,The Black Death,2016,reading-list,0,0,mine,The bubonic plague (1345–1353) in one hour. It killed about one third of the European and Asian population.
+9780749395100,How to Travel with a Salmon,2016,reading-list,0,0,mine,Funny short read.
+9780552997041,A Short History of Nearly Everything,2016,reading-list,1,0,mine,"If you're interested in history and science, you must read this book. Bryson explains how scientific ideas came about, and how the people who came up with them were often special human beings."
+9780691172477,Ethics in the Real World,2016,reading-list,1,1,,
+9780544668256,Thing Explainer,2016,reading-list,0,0,,
+brooks-the-mythical-man-month,The Mythical Man-Month,2016,reading-list,0,1,,
+9780691148908,Reinventing Discovery,2016,reading-list,0,0,mine,"Read half of it, then stopped. It has some interesting points, but it can be quite verbose for what I get out of it."
+card-ender-s-game-ender-quintet,Ender's Game (Ender Quintet Book 1),2016,reading-list,0,0,,
+9781607746621,What Color is Your Parachute?,2016,reading-list,0,0,mine,Somewhat useful to force you to think about what you want.
+9780192853622,The First World War,2016,reading-list,0,0,,
+cannon-command-line-kung-fu,Command Line Kung Fu,2016,reading-list,0,0,,
+9781439199190,How to Win Friends and Influence People,2016,reading-list,0,0,,
+9780393337112,Physics for Future Presidents: The Science Behind the Headlines,2016,reading-list,0,0,,
+9780393345100,Energy for Future Presidents,2016,reading-list,0,0,,
+9781439149959,The Lessons of History,2016,reading-list,1,0,mine,"History in a hundred pages: biology, morals, religion, economics and war. Progress is the increasing control of the environment by life, and equal educational opportunity is the best a fair society can offer."
+9780099302780,"Guns, Germs and Steel",2015,reading-list,1,1,,
+slatkin-effective-python,Effective Python,2015,reading-list,1,0,,
+lorimer-letters-from-a-self-made,"Letters from a Self-Made Merchant to His Son Being the Letters written by John Graham, Head of the House of Graham & Company, Pork-Packers in Chicago, ... known to his intimates as ""Piggy.""",2015,reading-list,1,1,mine,"A bit dated (sometimes it can be racist), but most of it is wise and pragmatic."
+9780671212094,How to Read a Book,2014;2015,reading-list,0,0,mine,"Good book, should be read in high school. Start from the basics (title, table of contents), read carefully or move on, skim, underline, annotate."
+9780226149653,Atoms in the Family,2015,reading-list,0,0,mine,"Biography of Enrico Fermi written by his wife. He was very competitive, even with his wife, a bit macho (not surprising for someone born in 1901), and super smart."
+covert-how-to-make-sense-of,How to Make Sense of Any Mess,2015,reading-list,0,0,mine,"Lots of fluff, no content."
+beveridge-the-art-of-scientific-investigation,The Art of Scientific Investigation,2015,reading-list,1,1,,
+wilson-on-human-nature,On Human Nature,2015,reading-list,1,0,mine,"What defines a human being, and how much of it comes from evolutionary biology? Some things it said crystal clear that I already thought; others it changed my view on."
+signol-les-enfants-des-justes,Les enfants des justes,2014,reading-list,0,0,mine,"In Nazi-occupied France, Virgile and Victoria, two simple people, take care of two Jewish kids. Mi ricorda molto Fenoglio: una scrittura schietta e semplice."
+clarke-against-the-fall-of-night,Against the Fall of Night (Arthur C. Clarke Collection,2014,reading-list,0,0,mine,Really good sci-fi novel. A gate is found that connects a society with the forgotten outside world.
+simsion-the-rosie-project-a-novel,The Rosie Project: A Novel (Don Tillman Book 1),2014,reading-list,0,0,mine,"A Sheldon-Cooper-type professor sets up a questionnaire to find the best life partner, and falls for someone who fits none of the criteria. Funny and smart."
+signol-une-si-belle-ecole,Une si belle école,2014,reading-list,0,0,mine,"Primary school teachers in post-war rural France, where school is a duty that harsh conditions keep people from appreciating. It reminds me of the life my parents went through."
+strauss-rules-of-the-game,Rules of the Game,2014,reading-list,0,0,mine,Follow-up of The Game. Not as entertaining.
+robbins-get-it-done-guy-s,Get-It-Done Guy's 9 Steps to Work Less and Do More,2014,reading-list,0,1,,
+kahneman-thinking-fast-and-slow,"Thinking, Fast and Slow",2014,reading-list,1,0,mine,"Our brain behaves as if there were two actors: a fast, intuitive one shaped by evolution, and a slow, rational one. Their interaction leads to systematic biases, and the only defence is to train yourself to recognize them."
+roach-bonk-the-curious-coupling-of,Bonk: The Curious Coupling of Science and Sex,2013,reading-list,0,0,mine,"The science of sex, from animals to humans, from bed to MRI. Interesting and humorous."
+smith-the-flinch,The Flinch,2013,reading-list,0,0,mine,"We are used to being comfortable. Sometimes it's good to take risks, and the way to do it rationally is to train yourself to flinch."
+9781841957517,The Game,2013,reading-list,0,0,mine,"Pick-up artists' adventures. An interesting perspective on human interactions, and on how we are programmed to react."
+feathers-working-effectively-with-legacy-code,Working Effectively with Legacy Code (Robert C. Martin Series),2013,reading-list,0,0,mine,"Legacy code is always there, you have to deal with it: unit testing, strategies to refactor, strategies to clean up. Very useful."
+9780142002360,Shackleton's Way: Leadership Lessons from the Great Antarctic Explorer,2013,reading-list,0,0,mine,Epic. The story of a captain and a leader.
+9780226284279,Megawatts and Megatons,2013,reading-list,0,0,mine,"Plenty of useful numbers and facts. Perhaps a bit outdated, but still very interesting."
+9782253135722,La vie à fil tendu,2013,reading-list,0,0,mine,Short and well written. Two parts: the human being and the scientist.
+taleb-fooled-by-randomness,Fooled by Randomness,2013,reading-list,0,0,mine,"Randomness is there in the markets, so there's very little we can do to predict them; realizing it protects you from easy-gain fairy tales. Good read."
+osherove-notes-to-a-software-team,Notes to a Software Team Leader,2013,reading-list,0,0,mine,"Good book, but I don't remember anything. Look at the notes."
+druyan-the-varieties-of-scientific-experience,The Varieties of Scientific Experience,2013,reading-list,1,0,mine,"Wonderful and humbling: science framed within the cosmos, then what it means to have a religious experience. Sagan makes simple, crystal-clear points, without preconceptions, and treats believers with respect, almost tenderness. It should be read in schools."
+thiongo-dreams-in-a-time-of,Dreams in a Time of War: A Childhood Memoir,2013,reading-list,0,0,mine,"Ngugi grows up in rural Kenya in 1934–1950 and, despite poverty, war, colonialism and racism, manages to go to school: the support people give each other makes apparently impossible dreams happen."
+fowler-the-passionate-programmer,The Passionate Programmer,2013,reading-list,0,0,,
+gaiman-the-ultimate-hitchhiker-s-guide,The Ultimate Hitchhiker's Guide to the Galaxy,2013,reading-list,0,0,mine,Fun. 42. Don't panic.
+asimov-foundation,Foundation,2013,reading-list,1,0,mine,One of the best sci-fi I've ever read. Science in the future is so advanced that it can predict when revolutions and changes will happen.
+wiesel-night-night-trilogy,Night (Night Trilogy),2013,reading-list,1,0,mine,Humanity pushed to its limits.
+pike-the-practice-of-programming,The Practice of Programming,2011,reading-list,0,0,mine,"Habits and tips that seem common sense once you see them written down: good naming, clean interfaces, systematic testing, profile before optimizing. This book should be read by everyone writing code."
+singer-the-life-you-can-save,The Life You Can Save,2011,reading-list,1,0,mine,"Compelling: poverty in the world has jaw-dropping figures, you are in a privileged top 1%, and a solution is possible if you play your role. After reading it you won't look at your problems the same way."
+saramago-il-vangelo-secondo-gesu-cristo,Il Vangelo secondo Gesù Cristo,2011,reading-list,0,0,,
+9788806178864,Lettere di condannati a morte della Resistenza italiana. 8 settembre 1943-25 aprile 1945,2011,reading-list,0,0,,
+9788804553687,Ultime lettere di condannati a morte e di deportati della resistenza (Italian Edition),2011,reading-list,0,0,,
+camus-l-etranger,L'Étranger,2010,reading-list,1,0,mine,"Uno dei libri migliori che abbia letto. Una trama breve e scarna, ma un libro che fa pensare molto, e che colpisce al ventre quando meno te lo aspetti."
+9780060850524,Brave New World,2010,reading-list,1,0,mine,"A dystopia driven by pragmatism and coldness: family ties reduced to the minimum, emotions regarded as dangerous, happiness ensured by the state with drugs. Its strength is how accurately it describes that future society."
+revelli-il-mondo-dei-vinti,Il mondo dei vinti,2010,reading-list,0,0,mine,"85 testimonianze dei poveri delle campagne cuneesi, raccolte nel 1970–72: un secolo di storia, dall'unità d'Italia allo sbarco sulla Luna, raccontato dai vinti. Un quadro completamente diverso da quello studiato a scuola."
+9781770857926,The Infographic History of the World,2017,amazon-purchase,0,0,,
+9781426211782,National Geographic Concise History of the World,2017,amazon-purchase,0,0,,
+9781448190690,Sapiens,2017,amazon-purchase,0,0,,
+9780133902839,Bayesian Methods for Hackers: Probabilistic Programming and Bayesian Inference (Addison-Wesley Data & Analytics),2017,amazon-purchase,0,0,,
+9781491907337,Think Stats: Exploratory Data Analysis,2017,amazon-purchase,0,0,,
+9788193245279,Data Structures and Algorithms Made Easy,2017,amazon-purchase,0,0,,
+9780143126027,A History of the World in 12 Maps,2017,amazon-purchase,0,0,,
+9781473637467,Factfulness,2018,amazon-purchase,0,0,,
+9780521670517,"Information Theory , Inference And Learning Algorithms",2018,amazon-purchase,0,0,,
+9780393314250,The Mismeasure of Man,2018,amazon-purchase,0,0,,
+9781566192408,The Natural History of Stupidity,2018,amazon-purchase,0,0,,
+9780692142608,Introduction to Algorithmic Marketing: Artificial Intelligence for Marketing Operations,2018,amazon-purchase,0,0,,
+9780970601971,Show Me the Numbers,2018,amazon-purchase,0,0,,
+9780307962331,Rules for a Knight,2018,amazon-purchase,0,0,,
+9781783962433,Prisoners of Geography,2018,amazon-purchase,0,0,,
+9781780225593,Scale,2018,amazon-purchase,0,0,,
+9781292153964,"Artificial Intelligence: A Modern Approach, Global Edition",2018,amazon-purchase,0,0,,
+9781491928462,Making Data Visual : A Practical Guide to Using Visualization for Insight,2018,amazon-purchase,0,0,,
+9780241398630,The Art of Statistics,2019,amazon-purchase,0,0,,
+9780932633439,Peopleware productive projects and teams,2019,amazon-purchase,0,0,,
+9780465050659,The Design of Everyday Things,2019,amazon-purchase,0,0,,
+9782738148032,Discipliner la finance,2019,amazon-purchase,0,0,,
+9782213702186,Euro. Par ici la sortie ? (Documents) (French Edition),2019,amazon-purchase,0,0,,
+9780062199577,The Ten-Day MBA 4th Ed.,2019,amazon-purchase,0,0,,
+9780743235532,The Greatest Minds and Ideas of All Time,2019,amazon-purchase,0,0,,
+9781492052203,"Architecture Patterns with Python: Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices",2020,amazon-purchase,0,0,,
+eco-baudolino,Baudolino,2020,amazon-purchase,0,0,,
+9788893440226,Pape Satàn Aleppe,2020,amazon-purchase,0,0,,
+9780241454411,Numbers Don't Lie,2020,amazon-purchase,0,0,,
+9781476771557,"Fallen Leaves: Last Words on Life, Love, War, and God",2020,amazon-purchase,0,0,,
+9780747550471,The Atlas of Experience,2020,amazon-purchase,0,0,,
+9780262536165,Energy and Civilization,2020,amazon-purchase,0,0,,
+9781554071470,NightWatch: A Practical Guide to Viewing the Universe,2021,amazon-purchase,0,0,,
+9782917260180,Astronomy for Fun,2021,amazon-purchase,0,0,,
+9782917260401,Geometry in the Open Air,2021,amazon-purchase,0,0,,
+9782757603314,"Parapente, s'initier et progresser: S'initier et progresser",2021,amazon-purchase,0,0,,
+9780691195780,The Little Book of Cosmology,2021,amazon-purchase,0,0,,
+9780742516854,Disciplined Minds: A Critical Look at Salaried Professionals and the Soul-battering System That Shapes Their Lives,2021,amazon-purchase,0,0,,
+9782738154262,"Climat, crises: Le plan de transformation de l'économie française",2022,amazon-purchase,0,0,,
+9788804667940,Il castello dei destini incrociati,2022,amazon-purchase,0,0,,
+9798772692936,Effective Pandas: Patterns for Data Manipulation (Treading on Python),2022,amazon-purchase,0,0,,
+9780008316426,How Will You Measure Your Life?: A thought-provoking approach to measuring life's success,2022,amazon-purchase,0,0,,
+9781260459142,Leading with AI and Analytics: Build Your Data Science IQ to Drive Business Value,2022,amazon-purchase,0,0,,
+9780596510046,Beautiful Code,2022,amazon-purchase,0,0,,
+9788806252762,Questioni private: Vita incompiuta di Beppe Fenoglio,2022,amazon-purchase,0,0,,
+9780349143866,How to Make the World Add Up,2022,amazon-purchase,0,0,,
+9782205088168,"Le Monde sans fin, miracle énergétique et dérive climatique",2022,amazon-purchase,0,0,,
+9781839213106,Pandas 1.x Cookbook - Second Edition,2022,amazon-purchase,0,0,,
+9781616085605,"Ultimate Book of Everyday Knots: (over 15,000 copies sold)",2023,amazon-purchase,0,0,,
+9780226822587,"Probably Overthinking It: How to Use Data to Answer Questions, Avoid Statistical Traps, and Make Better Decisions",2023,amazon-purchase,0,0,,
+9782021531145,Immigration : le grand déni,2023,amazon-purchase,0,0,,
+9782950864499,Les Visiteurs du Ciel,2024,amazon-purchase,0,0,,
+9781098136796,"Natural Language Processing with Transformers, Revised Edition: Building Language Applications With Hugging Face",2024,amazon-purchase,0,0,,
+9781718503779,Machine Learning Q and AI,2024,amazon-purchase,0,0,,
+9782917260340,Physics Everywhere,2021,amazon-purchase,0,0,,
