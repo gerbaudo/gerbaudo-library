@@ -1,9 +1,13 @@
 id,title,author,asin,highlights,notes,favorites,first_highlight,last_highlight,source
-weinberg-becoming-a-technical-leader,Becoming a Technical Leader,Gerald Weinberg,B004J4VV3I,142,0,0,2025-09-09,2025-09-09,screvi
+huyen-ai-engineering,AI Engineering,Chip Huyen,,149,6,0,2025-06-09,2026-05-05,screvi
+weinberg-becoming-a-technical-leader,Becoming a Technical Leader,Gerald M. Weinberg,,148,0,0,2024-11-02,2024-12-03,screvi
+huyen-designing-machine-learning-systems,Designing Machine Learning Systems,Chip Huyen,,97,7,0,2023-12-07,2024-02-17,screvi
 diamond-guns-germs-and-steel,"Guns, Germs, and Steel",Jared Diamond,B000VDUWMC,90,6,0,2025-09-09,2025-09-09,screvi
 kahneman-thinking-fast-and-slow,"Thinking, Fast and Slow",Daniel Kahneman,B00555X8OA,86,5,0,2025-09-09,2025-09-09,screvi
+beveridge-the-art-of-scientific-investigation,The Art of Scientific Investigation,W. I. B. Beveridge,,80,1,0,2015-09-18,2015-10-03,screvi
 fowler-the-passionate-programmer,The Passionate Programmer,Chad Fowler,B00AYQNR5U,77,0,0,2021-04-30,2025-09-09,screvi
 singer-practical-ethics,Practical Ethics,Peter Singer,B004YPJ8SM,72,1,0,2011-07-21,2011-07-21,screvi
+bahree-generative-ai-in-action,Generative AI in Action,Amit Bahree,,62,1,0,2024-12-11,2025-02-17,screvi
 sharpe-the-intelligent-portfolio,The Intelligent Portfolio,Christopher L. Jones and William F. Sharpe,B003VWCBVA,55,3,0,2022-01-20,2025-09-09,screvi
 wilson-on-human-nature,On Human Nature,Edward O. Wilson,B00AQLFQKW,53,8,0,2025-09-09,2025-09-09,screvi
 druyan-the-varieties-of-scientific-experience,The Varieties of Scientific Experience,Carl Sagan and Ann Druyan,B004IATCJI,48,1,0,2025-09-09,2025-09-09,screvi
@@ -12,47 +16,67 @@ taleb-fooled-by-randomness,Fooled by Randomness,Nassim Nicholas Taleb,B001FA0W5W
 gunaratana-mindfulness-in-plain-english,Mindfulness in Plain English,Bhante Gunaratana,B003XF1LKW,41,0,0,2025-09-09,2025-09-09,screvi
 duflo-poor-economics,Poor Economics,Abhijit Banerjee and Esther Duflo,B004P8K1WU,39,0,0,2025-09-09,2025-09-09,screvi
 feathers-working-effectively-with-legacy-code,Working Effectively with Legacy Code (Robert C. Martin Series),Michael Feathers,B005OYHF0A,38,2,0,2025-09-09,2025-09-09,screvi
+blete-developing-apps-with-gpt-4,Developing Apps with GPT-4 and ChatGPT,Olivier Caelen and Marie-Alice Blete,,37,3,0,2024-04-09,2024-04-29,screvi
 slatkin-effective-python,Effective Python,Brett Slatkin,B00TKGY0GU,36,1,0,2025-09-09,2025-09-09,screvi
 thiongo-dreams-in-a-time-of,Dreams in a Time of War: A Childhood Memoir,Ngugi wa  Thiongo,B0036S4EMI,32,0,0,2025-09-09,2025-09-09,screvi
 gaiman-the-ultimate-hitchhiker-s-guide,The Ultimate Hitchhiker's Guide to the Galaxy,Douglas Adams and Neil Gaiman,B0043M4ZH0,31,0,0,2025-09-09,2025-09-09,screvi
 lorimer-letters-from-a-self-made,"Letters from a Self-Made Merchant to His Son Being the Letters written by John Graham, Head of the House of Graham & Company, Pork-Packers in Chicago, ... known to his intimates as ""Piggy.""",George Horace Lorimer,B004UK1JZQ,29,1,0,2025-09-09,2025-09-09,screvi
 hale-mind-performance-hacks,Mind Performance Hacks,Ron Hale-Evans,B0043D2EN6,25,0,0,2025-09-09,2025-09-09,screvi
 smith-the-flinch,The Flinch,Julien Smith,B0062Q7S3S,24,2,0,2025-09-09,2025-09-09,screvi
+sagan-cosmos,Cosmos,Carl Sagan,,23,23,0,2026-11-01,2026-11-01,screvi
+overton-going-pro-in-data-science,Going Pro in Data Science,Jerry Overton,,22,0,0,2018-02-15,2018-02-17,screvi
 cannon-command-line-kung-fu,Command Line Kung Fu,Jason Cannon,B00JRGCFLA,21,0,0,2025-09-09,2025-09-09,screvi
 osherove-notes-to-a-software-team,Notes to a Software Team Leader,Roy Osherove,B00EP03O5Y,20,1,0,2025-09-09,2025-09-09,screvi
+densmore-data-pipelines-pocket-reference,Data Pipelines Pocket Reference,James Densmore,,17,2,0,2023-04-17,2023-11-09,screvi
 robbins-get-it-done-guy-s,Get-It-Done Guy's 9 Steps to Work Less and Do More,Stever Robbins,B003SNJLA6,16,0,0,2025-09-09,2025-09-09,screvi
+ziade-expert-python-programming-4th-edition,"Expert Python Programming, 4th Edition",Michał Jaworski and Tarek Ziadé,,15,0,0,2024-01-30,2024-02-03,screvi
 history-the-black-death,The Black Death,Hourly History,B01BV9VJ62,14,1,0,2025-09-09,2025-09-09,screvi
 singer-the-life-you-can-save,The Life You Can Save,Peter Singer,B001S59CP0,13,1,0,2025-09-09,2025-09-09,screvi
 harari-nexus-a-brief-history-of,Nexus: A Brief History of Information Networks from the Stone Age to AI,Yuval Noah Harari,,13,0,0,2026-04-12,2026-04-12,screvi
+unknown-best-russian-short-stories,Best Russian Short Stories,Unknown,,12,3,0,2013-11-30,2013-12-02,screvi
 etter-modern-technical-writing,Modern Technical Writing,Andrew Etter,B01A2QL9SS,12,0,0,2025-09-09,2025-09-09,screvi
+sundararajan-thinking-like-a-large-language,Thinking Like A Large Language Model,MUKUND SUNDARARAJAN,B0DLDFZ7P2,11,0,0,2025-02-21,2025-09-09,screvi
 meyers-effective-stl,Effective STL,Scott Meyers,B0019HW0K6,11,5,0,2025-09-09,2025-09-09,screvi
+revelli-il-mondo-dei-vinti-testimonianze,Il mondo dei vinti: Testimonianze di vita contadina,Nuto Revelli,,10,10,0,2026-11-01,2026-11-01,screvi
 dostoyevsky-the-idiot,The Idiot,Fyodor Dostoyevsky,B002RKRUJU,10,0,0,2011-08-27,2011-08-27,screvi
 styron-darkness-visible-a-memoir-of,Darkness Visible: A Memoir of Madness (Open Road),William Styron,B003JBFCFA,10,0,0,2011-12-05,2011-12-05,screvi
+wells-a-short-history-of-the,A Short History of The World,H. G. Wells,B0CG6Q41G2,9,0,0,2024-05-02,2025-09-09,screvi
 jones-the-thinker-s-toolkit,The Thinker's Toolkit,Morgan D. Jones,B002PYFW4S,8,0,0,2011-04-29,2011-04-29,screvi
-wells-a-short-history-of-the,A Short History of The World,H. G. Wells,B0CG6Q41G2,8,0,0,2025-09-09,2025-09-09,screvi
 -do-more-great-work,Do More Great Work,"Michael Bungay Stanier, Seth Godin, Michael Port, and Dave Ulrich ; Chris Guillebeau ; Leo Babauta ;",B003HMOW8E,7,0,0,2012-02-04,2012-02-04,screvi
 wiesel-night-night-trilogy,Night (Night Trilogy),Elie Wiesel and Marion Wiesel,B0071VUXXA,7,0,0,2025-09-09,2025-09-09,screvi
 rochefoucauld-reflexions-ou-sentences-et-maximes,Réflexions ou sentences et maximes morales (French Edition),François duc de La Rochefoucauld,B004UJO4UY,7,0,0,2025-09-09,2025-09-09,screvi
 gubser-the-little-book-of-string,The Little Book of String Theory (Science Essentials),Steven S. Gubser,B003NX6KNC,7,0,0,2025-09-09,2025-09-09,screvi
+revelli-l-anello-forte,L'anello forte,Nuto Revelli,,7,7,0,2026-11-01,2026-11-01,screvi
 asimov-foundation,Foundation,Isaac Asimov,B000FC1PWA,7,0,0,2025-09-09,2025-09-09,screvi
 higbee-your-memory-how-it-works,Your Memory : How It Works and How to Improve It,Kenneth L. Higbee,B001Y35JI0,6,1,0,2012-02-05,2012-02-05,screvi
 fawcett-data-science-for-business,Data Science for Business,Foster Provost and Tom Fawcett,B00E6EQ3X4,6,0,0,2025-09-09,2025-09-09,screvi
 dostoyevsky-the-grand-inquisitor,The Grand Inquisitor,Fyodor Dostoyevsky,B000JQV0G8,6,0,0,2011-01-13,2011-01-13,screvi
 clarke-against-the-fall-of-night,Against the Fall of Night (Arthur C. Clarke Collection,Arthur C. Clarke,B00AHGEHTC,6,0,0,2025-09-09,2025-09-09,screvi
 howey-wool-omnibus-edition-kindle-in,Wool Omnibus Edition [Kindle in Motion] (Silo series Book 1),Hugh Howey,B0071XO8RA,5,0,0,2025-09-09,2025-09-09,screvi
-sundararajan-thinking-like-a-large-language,Thinking Like A Large Language Model,MUKUND SUNDARARAJAN,B0DLDFZ7P2,5,0,0,2025-09-09,2025-09-09,screvi
+pavese-il-mestiere-di-vivere-diario,Il mestiere di vivere: Diario 1935-1950,Cesare Pavese,,5,5,0,2026-11-01,2026-11-01,screvi
 maccaw-the-little-book-on-coffeescript,The Little Book on CoffeeScript,Alex MacCaw,B006ZYZCRQ,4,2,0,2025-09-09,2025-09-09,screvi
 publisher-data-science-from-scratch-with,Data Science from Scratch with Python,Peter Morgan and AI Sciences Publisher,B07GRDWJ5L,4,0,0,2025-09-09,2025-09-09,screvi
+mckinney-python-for-data-analysis-2nd,"Python for Data Analysis, 2nd Edition",Wes McKinney,,4,3,0,2020-11-30,2020-11-30,screvi
+sivia-data-analysis-a-bayesian-tutorial,Data Analysis: A Bayesian Tutorial,D. S. Sivia,,4,0,0,2014-11-09,2014-12-31,screvi
 huxley-the-origin-of-species-150th,The Origin Of Species: 150th Anniversary Edition,Charles Darwin and Julian Huxley,B002JF1N0A,4,0,0,2025-09-09,2025-09-09,screvi
 filipi-practical-weak-supervision,Practical Weak Supervision,"Wee Hyong Tok, Amit Bahree, and Senja Filipi",B09HL5ZNVN,3,0,0,2025-09-09,2025-09-09,screvi
+harrison-machine-learning-pocket-reference,Machine Learning Pocket Reference,Matt Harrison,,3,0,0,2023-04-07,2023-04-07,screvi
 history-charles-darwin-a-life-from,Charles Darwin: A Life from Beginning to End,Hourly History,B01LZA7Q74,3,0,0,2025-09-09,2025-09-09,screvi
 close-the-new-cosmic-onion,The New Cosmic Onion,Frank Close,B000SFM1A4,3,0,0,2025-09-09,2025-09-09,screvi
+neumann-the-computer-and-the-brain,The Computer and the Brain,John von Neumann,,3,3,0,2026-11-01,2026-11-01,screvi
 card-ender-s-game-ender-quintet,Ender's Game (Ender Quintet Book 1),Orson Scott Card,B003G4W49C,2,0,0,2025-09-09,2025-09-09,screvi
 russell-artificial-intelligence-a-modern-approach,Artificial Intelligence: A Modern Approach,Stuart Russell,,2,0,0,2025-09-09,2025-09-09,screvi
+zhao-sql-pocket-guide-4th-edition,"SQL Pocket Guide, 4th Edition",Alice Zhao,,2,0,0,2023-04-15,2023-04-15,screvi
 simsion-the-rosie-project-a-novel,The Rosie Project: A Novel (Don Tillman Book 1),Graeme Simsion,B00BSBR9N6,2,0,0,2025-09-09,2025-09-09,screvi
 strauss-rules-of-the-game,Rules of the Game,Neil Strauss,B007MB5SCK,2,0,0,2025-09-09,2025-09-09,screvi
 angell-the-great-illusion-a-study,The Great Illusion A Study of the Relation of Military Power to National Advantage,Norman Angell,B006W11I3O,1,0,0,2025-09-09,2025-09-09,screvi
+hyong-practical-weak-supervision,Practical Weak Supervision,"Tok, Wee Hyong",,1,0,0,2024-06-13,2024-06-13,screvi
 plato-the-republic,The Republic,Plato,B002RKSTWM,1,1,0,2011-01-16,2011-01-16,screvi
 clear-atomic-habits-an-easy-proven,Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones,James Clear,,1,0,0,2025-09-08,2025-09-08,screvi
+khononov-learning-domain-driven-design,Learning Domain-Driven Design,Vlad Khononov,,1,0,0,2023-10-10,2023-10-10,screvi
+henney-97-things-every-programmer-should,97 Things Every Programmer Should Know,Kevlin Henney,,1,0,0,2022-04-12,2022-04-12,screvi
 publisher-hands-on-machine-learning-with,Hands On Machine Learning with Python,John Anderson and AI Sciences Publisher,B07G4M16JF,1,0,0,2025-09-09,2025-09-09,screvi
 rossant-learning-ipython-for-interactive-computing,Learning IPython for Interactive Computing and Data Visualization,Cyrille Rossant,B00CITNPHQ,1,1,0,2025-09-09,2025-09-09,screvi
+chen-pandas-for-everyone-2nd-edition,"Pandas for Everyone, 2nd Edition",Daniel Y. Chen,,1,0,0,2023-10-10,2023-10-10,screvi
+seguin-the-little-redis-book,The Little Redis Book,Karl Seguin,,1,0,0,2013-11-29,2013-11-29,screvi
+rossant-ipython-interactive-computing-and-visualization,IPython Interactive Computing and Visualization Cookbook,Cyrille Rossant,,1,1,0,2020-11-19,2020-11-19,screvi

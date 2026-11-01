@@ -14,6 +14,9 @@ Published at <https://gerbaudo.github.io/gerbaudo-library> (coming soon).
     (page marks are stored in its Comments field)
   - `import_screvi.py` — a [Screvi](https://screvi.com) highlights CSV export
     (Screvi also syncs Kindle); only per-book counts are kept
+  - `data/screvi_sources.csv` — maps messy Screvi source names (PDF file names,
+    one book under two names) to a proper title and author, and marks papers and
+    articles (`kind = paper`) so they stay out of the book library
   - `merge.py` — combines them into `data/books.csv` and lists doubtful matches in
     `data/needs_review.csv`; manual fixes go in `data/overrides.csv`
 

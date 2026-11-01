@@ -66,6 +66,9 @@ check the output for warnings, commit with a clear message, and push.
    device tools if the laptop is linked, otherwise ask him to attach them.
 2. My Library: `python import_mylibrary.py ../data/raw/mylibrary-YYYYMM.db ../data/mylibrary-YYYYMM.csv`.
    Screvi: `python import_screvi.py ../data/raw/screvi-highlights-YYYY-MM-DD.csv ../data/screvi.csv`.
+   The Screvi importer drops exact duplicate highlights and uses `data/screvi_sources.csv`:
+   after an import, list Screvi sources that look like file names, papers or duplicates,
+   propose a title/author/kind for each, and add the rows Davide confirms (papers stay out).
 3. `python merge.py`, then read `data/merge_log.csv` and report anything surprising
    (counts that went down, unexpected merges) before committing. Ask if unsure.
 4. `python enrich_openlibrary.py && python merge.py && python build_site.py`, commit, push.
