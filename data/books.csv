@@ -34,7 +34,7 @@ beveridge-the-art-of-scientific-investigation,9780394701295,,The Art of Scientif
 9788804535072,9788804535072,,La Nuova Storia D'Italia a Fumetti: Dall'impero Romano Ai Giorni Nostri,Enzo Biagi,705,,,0,,,,mylibrary,openlibrary-search
 9788877831101,9788877831101,,"Piccolo, grande, vivo : storie di quark e di galassie, di uomini e altri animali / Piero Bianucci",Piero Bianucci,,01/01/1991,,0,,,,mylibrary,
 9780241448304,9780241448304,,How To Avoid A Climate Disaster,Bill,266,,,0,16,,,mylibrary,openlibrary-isbn
-blete-developing-apps-with-gpt-4,,,Developing Apps with GPT-4 and ChatGPT,Olivier Caelen and Marie-Alice Blete,,,,1,,,37,screvi,
+blete-developing-apps-with-gpt-4,9781098168100,,Developing Apps with GPT-4 and ChatGPT,Olivier Caelen and Marie-Alice Blete,,,,1,,,37,screvi,
 9780804715010,9780804715010,,Fundamentals of Statistical Mechanics,Felix Bloch,302,1989,Science,0,,,,mylibrary,mylibrary
 9780471044093,9780471044093,,Mathematical Methods in the Physical Sciences,Mary L. Boas,793,1983,,1,1,10,,mylibrary,openlibrary-isbn
 9781607746621,9781607746621,,What Color is Your Parachute?,Richard Nelson Bolles,353,1971,Career changes,0,,,,mylibrary,mylibrary
@@ -101,7 +101,7 @@ dalio-principles-life-and-work,9781501124051,,Principles: Life and Work,Ray Dali
 9788871924496,9788871924496,,Programmazione Java. Fondamenti,Paul J. Deitel,624,2008,Computers,0,,,,mylibrary,mylibrary
 9780932633439,9780932633439,,Peopleware productive projects and teams,Tom DeMarco,245,01/01/1999,,0,24,,,mylibrary,openlibrary-isbn
 9788835900931,9788835900931,,Esercizi e problemi di analisi matematica,Boris P. Demidovič,486,1975,Mathematics,1,1,1,,mylibrary,mylibrary
-densmore-data-pipelines-pocket-reference,,,Data Pipelines Pocket Reference,James Densmore,,,,1,,,17,screvi,
+densmore-data-pipelines-pocket-reference,9781492087830,,Data Pipelines Pocket Reference,James Densmore,276,,,1,,,17,screvi,openlibrary-search
 9788842508717,9788842508717,,Discorso sul metodo,René Descartes,108,08/06/1637,,0,,,,mylibrary,openlibrary-search
 devlin-how-to-speak-and-write,9781974171736,,How to Speak and Write Correctly,Joseph Devlin,139,,Kindle,0,,,,manual,openlibrary-search
 9780099302780,9780099302780,B000VDUWMC,"Guns, Germs and Steel",Jared M. Diamond,480,1998,Civilization,1,20,26,90,mylibrary;screvi,mylibrary
@@ -258,6 +258,7 @@ lorimer-letters-from-a-self-made,,B004UK1JZQ,"Letters from a Self-Made Merchant 
 maccaw-the-little-book-on-coffeescript,9781449325558,B006ZYZCRQ,The Little Book on CoffeeScript,Alex MacCaw,,,,1,,,4,screvi,
 9780521670517,9780521670517,,"Information Theory , Inference And Learning Algorithms",David MacKay,640,,,1,20,10,,mylibrary,mylibrary
 9780696019425,9780696019425,,Small Furniture You Can Make,Wood Magazine,96,1991,Furniture making,0,,,,mylibrary,mylibrary
+mahajan-the-art-of-insight-in,9780262526548,,The Art of Insight in Science and Engineering,Sanjoy Mahajan,389,,,1,,,4,screvi,openlibrary-search
 9788879520041,9788879520041,,Arrivederci ragazzi,Louis Malle,174,1993,,0,,,,mylibrary,mylibrary
 9788806178864,9788806178864,,Lettere di condannati a morte della Resistenza italiana. 8 settembre 1943-25 aprile 1945,Piero Malvezzi,357,1961,,0,,,,mylibrary,openlibrary-search
 9788804331728,9788804331728,,I promessi sposi,Alessandro Manzoni,673,1990,Fiction,0,,,,mylibrary,mylibrary
@@ -350,7 +351,7 @@ rochefoucauld-reflexions-ou-sentences-et-maximes,,B004UJO4UY,Réflexions ou sent
 9780471572701,9780471572701,,Modern Physics from alpha to Z0,James William Rohlf,664,12/04/1994,Science,1,1,12,,mylibrary,mylibrary
 9781473637467,9781473637467,,Factfulness,Hans Rosling,352,03/04/2018,Business & Economics,0,34,,,mylibrary,mylibrary
 rossant-learning-ipython-for-interactive-computing,9781782169932,B00CITNPHQ,Learning IPython for Interactive Computing and Data Visualization,Cyrille Rossant,138,,,1,,,1,screvi,openlibrary-search
-rossant-ipython-interactive-computing-and-visualization,,,IPython Interactive Computing and Visualization Cookbook,Cyrille Rossant,,,,1,,,1,screvi,
+rossant-ipython-interactive-computing-and-visualization,9781322166223,,IPython Interactive Computing and Visualization Cookbook,Cyrille Rossant,512,,,1,,,1,screvi,openlibrary-search
 9788872468401,9788872468401,,The Ways of Giacomo Puccini,Daniele Rubboli,144,,,0,,,,mylibrary,mylibrary
 9781292153964,9781292153964,,"Artificial Intelligence: A Modern Approach, Global Edition",Russell,1152,,,0,5,,2,mylibrary;screvi,openlibrary-isbn
 9780345331359,9780345331359,,Cosmos,Carl Sagan,324,1985,Science,0,31,,23,mylibrary;screvi,mylibrary
@@ -381,7 +382,7 @@ simsion-the-rosie-project-a-novel,9781476729091,B00BSBR9N6,The Rosie Project: A 
 9780691172477,9780691172477,,Ethics in the Real World,Peter Singer,376,20/09/2016,Philosophy,0,2,,,mylibrary,mylibrary
 singer-practical-ethics,9780521433631,B004YPJ8SM,Practical Ethics,Peter Singer,395,,,1,,,72,screvi,openlibrary-search
 singer-the-life-you-can-save,9781588367792,B001S59CP0,The Life You Can Save,Peter Singer,206,,,1,,,13,screvi,openlibrary-search
-sivia-data-analysis-a-bayesian-tutorial,,,Data Analysis: A Bayesian Tutorial,D. S. Sivia,,,,1,,,4,screvi,
+sivia-data-analysis-a-bayesian-tutorial,9780198568315,,Data Analysis: A Bayesian Tutorial,D. S. Sivia,264,,,1,,,4,screvi,openlibrary-search
 9780791861967,9780791861967,,The Unwritten Laws Of Engineering,Skakoon,66,,,0,7,,,mylibrary,openlibrary-isbn
 slatkin-effective-python,9780138172275,B00TKGY0GU,Effective Python,Brett Slatkin,480,,,1,,,36,screvi,openlibrary-search
 9780262536165,9780262536165,,Energy and Civilization,Vaclav Smil,552,13/09/2018,Energiekonsum,0,30,,,mylibrary,mylibrary
