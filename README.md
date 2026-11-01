@@ -17,8 +17,8 @@ Published at <https://gerbaudo.github.io/gerbaudo-library> (coming soon).
   - `data/screvi_sources.csv` — maps messy Screvi source names (PDF file names,
     one book under two names) to a proper title and author, and marks papers and
     articles (`kind = paper`) so they stay out of the book library
-  - `merge.py` — combines them into `data/books.csv` and lists doubtful matches in
-    `data/needs_review.csv`; manual fixes go in `data/overrides.csv`
+  - `merge.py` — combines them into `data/books.csv` and logs every merge decision
+    in `data/merge_log.csv`; manual fixes go in `data/overrides.csv`
 
 - **Matching** (`scripts/common.py`): every book gets a stable ID — its ISBN-13 when
   known, otherwise an `author-title` slug. Uncertain matches go to a review list
