@@ -134,6 +134,19 @@ dd { margin: 0; font-variant-numeric: tabular-nums; min-width: 0; overflow-wrap:
 .sheet { background: var(--panel); color: var(--ink); border-radius: 6px; max-width: 760px; width: 100%; overflow: auto; padding: 22px 24px; }
 .sheet header { margin-bottom: 12px; }
 .sheet pre { white-space: pre-wrap; overflow-wrap: anywhere; font: .9rem/1.55 var(--body); margin: 0; }
+/* Covers */
+.covers { display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 14px 12px; margin-top: 12px; }
+.cv { border: 0; padding: 0; background: none; cursor: pointer; text-align: left; color: inherit; font: inherit;
+  display: flex; flex-direction: column; justify-content: flex-start; align-self: start; }
+.cv .img { aspect-ratio: 2 / 3; max-width: 100%; border-radius: 2px; overflow: hidden; display: flex; align-items: flex-end;
+  box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .15s ease; }
+.cv:hover .img, .cv.sel .img { transform: translateY(-4px); }
+.cv.sel .img { outline: 2px solid var(--gilt); outline-offset: 2px; }
+.cv img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cv .fb { padding: 8px 7px; color: #f4f1ea; font: 500 .78rem/1.15 var(--display); letter-spacing: .02em; overflow: hidden; max-height: 100%; }
+.cv .cap { font-size: .75rem; line-height: 1.25; margin-top: 6px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cover { width: 120px; max-width: 40%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 4px rgba(0,0,0,.3); margin: 0 0 12px; display: block; }
+@media (prefers-reduced-motion: reduce) { .cv .img { transition: none; } }
 footer { margin-top: 36px; font: .75rem var(--mono); color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .spine { transition: none; } }
 </style>
@@ -160,18 +173,23 @@ footer { margin-top: 36px; font: .75rem var(--mono); color: var(--muted); }
         <option value="signal">Marks + highlights</option><option value="pages">Pages</option>
       </select>
     </label>
+    <label class="ctl" id="look-wrap">Show
+      <select id="look"><option value="spines">Spines</option><option value="covers">Covers</option></select>
+    </label>
     <label class="ctl"><input type="checkbox" id="onlysig"> With marks only</label>
   </div>
 
   <div class="main">
     <section>
       <div id="view-shelf">
-        <div class="legend">
+        <div class="legend" id="legend-covers" hidden><span>Covers from Open Library; a coloured tile when it has none</span></div>
+        <div class="legend" id="legend-spines">
           <span>Spine width = pages</span>
           <span><span class="sw" style="background:var(--gilt)"></span>1–3 gold bands = 1, 3, 10+ marks per 100 pages</span>
           <span>Striped = page count unknown</span>
         </div>
         <div class="shelf" id="shelf" style="margin-top:12px"></div>
+        <div class="covers" id="covers" hidden></div>
       </div>
       <div id="view-signal" hidden>
         <div class="legend">
@@ -215,7 +233,8 @@ const BOOKS = JSON.parse(document.getElementById("books").textContent).map(b => 
 });
 const $ = id => document.getElementById(id);
 const SPINE_COLORS = ["#6e2f36", "#2f4f3e", "#283c5c", "#7a5a26", "#4b4f58", "#55385a", "#3d5a63", "#7b3f2a"];
-const state = { view: "shelf", q: "", src: "all", sort: "author", onlysig: false, sel: null };
+const state = { view: "shelf", q: "", src: "all", sort: "author", onlysig: false, sel: null, look: "spines" };
+const coverUrl = (b, size) => b.isbn ? `https://covers.openlibrary.org/b/isbn/${b.isbn}-${size}.jpg?default=false` : "";
 try { Object.assign(state, JSON.parse(localStorage.getItem("lib-prefs") || "{}"), { sel: null }); } catch (e) {}
 
 const fold = s => (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -241,7 +260,32 @@ function sorted(list) {
   return list.slice().sort(by);
 }
 
+function renderCovers(list) {
+  const el = $("covers");
+  if (!list.length) { el.innerHTML = '<p class="empty">No books match. Clear the search or filters.</p>'; return; }
+  el.innerHTML = sorted(list).map(b => {
+    const color = SPINE_COLORS[hash(b.cat || b.author || b.id) % SPINE_COLORS.length];
+    const fb = `<span class="fb">${esc(b.title)}</span>`;
+    const img = b.isbn ? `<img loading="lazy" alt="" src="${coverUrl(b, "M")}" data-fb="1">` : fb;
+    return `<button class="cv${state.sel === b.id ? " sel" : ""}" data-id="${esc(b.id)}" title="${esc(b.title)} · ${esc(b.author)}">
+      <span class="img" style="background-color:${color}">${img}</span><span class="cap">${esc(b.title)}</span></button>`;
+  }).join("");
+}
+// a cover Open Library doesn't have (or an image the page can't load) falls back to a coloured tile
+document.addEventListener("error", e => {
+  const t = e.target;
+  if (t.tagName !== "IMG") return;
+  if (t.dataset.fb) { const span = document.createElement("span"); span.className = "fb";
+    span.textContent = t.closest(".cv").title.split(" · ")[0]; t.replaceWith(span); }
+  else if (t.classList.contains("cover")) t.remove();
+}, true);
+
 function renderShelf(list) {
+  $("shelf").hidden = state.look === "covers";
+  $("legend-spines").hidden = state.look === "covers";
+  $("legend-covers").hidden = state.look !== "covers";
+  $("covers").hidden = state.look !== "covers";
+  if (state.look === "covers") return renderCovers(list);
   const el = $("shelf");
   if (!list.length) { el.innerHTML = '<p class="empty">No books match. Clear the search or filters.</p>'; return; }
   el.innerHTML = sorted(list).map(b => {
@@ -350,7 +394,7 @@ function renderDetail() {
   const must = b.must ? '<span class="pill must">Must-read</span>' : "";
   const readIn = b.years ? `<p class="hint" style="margin-top:10px">Read in ${b.years.split(";").join(" and ")}${b.ysrc === "amazon-purchase" ? " (year bought)" : ""}</p>` : "";
   const hasLong = PRIVATE && PRIVATE.ids.includes(b.id);
-  el.innerHTML = `<p class="t">${esc(b.title)}</p><p class="a">${esc(b.author) || "Unknown author"}</p><div>${pills}${must}</div>
+  el.innerHTML = `${b.isbn ? `<img class="cover" alt="Cover of ${esc(b.title)}" src="${coverUrl(b, "M")}">` : ""}<p class="t">${esc(b.title)}</p><p class="a">${esc(b.author) || "Unknown author"}</p><div>${pills}${must}</div>
     ${readIn}${b.summary ? `<p class="summary">${esc(b.summary)}</p>` : ""}
     ${hasLong ? `<div style="margin-top:12px"><button class="btn" id="open-notes">Read my longer notes</button>
       <form class="pw" id="pwform" hidden><input type="password" id="pw" placeholder="Password" aria-label="Password" autocomplete="off"><button class="btn" type="submit">Unlock</button></form>
@@ -366,10 +410,11 @@ function render() {
   $("view-signal").hidden = state.view !== "signal";
   $("view-history").hidden = state.view !== "history";
   $("sort-wrap").hidden = state.view !== "shelf";
+  $("look-wrap").hidden = state.view !== "shelf";
   const list = filtered();
   ({ shelf: renderShelf, signal: renderChart, history: renderHistory })[state.view](list);
   renderDetail();
-  try { localStorage.setItem("lib-prefs", JSON.stringify({ src: state.src, sort: state.sort, onlysig: state.onlysig })); } catch (e) {}
+  try { localStorage.setItem("lib-prefs", JSON.stringify({ src: state.src, sort: state.sort, onlysig: state.onlysig, look: state.look })); } catch (e) {}
 }
 
 function select(id) { state.sel = state.sel === id ? null : id; render(); }
@@ -383,6 +428,7 @@ $("q").addEventListener("input", e => { state.q = e.target.value; render(); });
 $("src").addEventListener("change", e => { state.src = e.target.value; render(); });
 $("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
 $("onlysig").addEventListener("change", e => { state.onlysig = e.target.checked; render(); });
+$("look").addEventListener("change", e => { state.look = e.target.value; render(); });
 for (const t of document.querySelectorAll(".tab")) t.addEventListener("click", () => { location.hash = t.dataset.view; });
 document.addEventListener("click", e => {
   if (e.target.id === "open-notes") { openNotes(BOOKS.find(x => x.id === state.sel)); return; }
@@ -398,6 +444,6 @@ document.addEventListener("submit", async e => {
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("overlay").hidden) closeNotes(); });
 function fromHash() { state.view = ({ "#signal": "signal", "#history": "history" })[location.hash] || "shelf"; render(); }
 window.addEventListener("hashchange", fromHash);
-$("src").value = state.src; $("sort").value = state.sort; $("onlysig").checked = state.onlysig;
+$("src").value = state.src; $("sort").value = state.sort; $("onlysig").checked = state.onlysig; $("look").value = state.look;
 fromHash();
 </script>
