@@ -40,9 +40,22 @@ python build_site.py           # rebuild docs/index.html (the viewer)
 The `pages_source` column says where each page count came from: `mylibrary` (my
 own entry), `openlibrary-isbn` (that exact edition), or `openlibrary-search` (median
 across editions of the title: an estimate, fine for Kindle books).
+## Summaries, reading history, long notes
+
+- `data/notes.csv`: for each book I've written about, the year(s) I read it, whether
+  it's a must-read, and a one- or two-sentence summary in my own words. These are
+  public and appear on the **Reading history** tab and in each book's details.
+- Long notes (chapter notes, older reviews) are kept in `data/private/notes/`
+  (git-ignored) and committed only as an encrypted bundle,
+  `data/notes_private.enc.json` (`scripts/private_notes.py encrypt|decrypt`). The page
+  shows them behind a password. This is protection against scraping, not real secrecy.
+- Quotes live in [Screvi](https://screvi.com), not in this repo.
+- `data/manual.csv`: books added by hand, e.g. with `scripts/add_book.py <isbn>`.
+- `.claude/skills/library/SKILL.md` describes these workflows for Claude
+  ("add a summary for …", "add ISBN …", "import the new exports").
+
 ## Privacy
 
 Raw exports live in `data/raw/`, which is git-ignored: they contain full highlight
-text and personal notes. Only counts and public metadata are committed. Private
-notes and highlights will go into an encrypted file, readable on a
-password-protected page.
+text and personal notes. Only counts and public metadata are committed. Long notes are
+published only in encrypted form.

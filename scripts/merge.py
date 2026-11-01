@@ -61,6 +61,10 @@ def main() -> None:
         return next((i for i in by_key.get(key, []) if same_volume(title, books[i]["title"])), None)
 
     snapshots = sorted(f for f in os.listdir(DATA) if re.fullmatch(r"mylibrary-.+\.csv", f))
+    # data/manual.csv (books added by hand, e.g. from the old reading list or by ISBN)
+    # is read last, like the newest snapshot
+    if os.path.exists(os.path.join(DATA, "manual.csv")):
+        snapshots.append("manual.csv")
     for snap in snapshots:
         rows_in = load(snap)
         # books already known by ISBN go first, so the title/author spellings they
@@ -68,8 +72,8 @@ def main() -> None:
         rows_in.sort(key=lambda r: r["id"] not in books)
         for r in rows_in:
             row = {f: r.get(f, "") for f in FIELDS}
-            row["sources"] = "mylibrary"
-            row["pages_source"] = "mylibrary" if row["pages"] not in ("", "0") else ""
+            row["sources"] = "manual" if snap == "manual.csv" else "mylibrary"
+            row["pages_source"] = row["sources"] if row["pages"] not in ("", "0") else ""
             key = match_key(r["title"], r["author"])
             existing_id = find(r["id"], key, r["title"])
             if existing_id is None:

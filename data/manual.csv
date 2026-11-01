@@ -1,0 +1,12 @@
+id,isbn,title,author,pages,publisher,published,categories,read,marks,oneshot,source
+brooks-the-mythical-man-month,,The Mythical Man-Month,Frederick P. Brooks,,,,,1,,,manual
+covert-how-to-make-sense-of,,How to Make Sense of Any Mess,Abby Covert,,,,,1,,,manual
+beveridge-the-art-of-scientific-investigation,,The Art of Scientific Investigation,W. I. B. Beveridge,,,,,1,,,manual
+signol-les-enfants-des-justes,,Les enfants des justes,Christian Signol,,,,,1,,,manual
+signol-une-si-belle-ecole,,Une si belle école,Christian Signol,,,,,1,,,manual
+roach-bonk-the-curious-coupling-of,,Bonk: The Curious Coupling of Science and Sex,Mary Roach,,,,,1,,,manual
+pike-the-practice-of-programming,,The Practice of Programming,Brian W. Kernighan and Rob Pike,,,,,1,,,manual
+saramago-il-vangelo-secondo-gesu-cristo,,Il Vangelo secondo Gesù Cristo,José Saramago,,,,,1,,,manual
+camus-l-etranger,,L'Étranger,Albert Camus,,,,,1,,,manual
+revelli-il-mondo-dei-vinti,,Il mondo dei vinti,Nuto Revelli,,,,,1,10,,manual
+neumann-the-computer-and-the-brain,,The Computer and the Brain,John von Neumann,,,,,1,3,,manual

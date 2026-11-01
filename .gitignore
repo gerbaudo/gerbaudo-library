@@ -9,3 +9,6 @@ My Clippings.txt
 __pycache__/
 *.pyc
 .venv/
+
+# Long private notes: only the encrypted bundle (data/notes_private.enc.json) is committed
+data/private/

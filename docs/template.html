@@ -108,6 +108,32 @@ dd { margin: 0; font-variant-numeric: tabular-nums; min-width: 0; overflow-wrap:
 .pill { display: inline-block; font: .7rem var(--mono); padding: 1px 6px; border-radius: 9px; border: 1px solid currentColor; margin-right: 4px; }
 .pill.paper { color: var(--paper); } .pill.kindle { color: var(--kindle); }
 .hint { color: var(--muted); font-style: italic; margin: 0; }
+/* Reading history */
+.intro { max-width: 62ch; margin: 0 0 18px; color: var(--muted); }
+.year { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 0 20px; padding-block: 16px; border-top: 1px solid var(--rule); }
+.year h3 { font: 600 1.9rem/1 var(--display); margin: 0; font-variant-numeric: tabular-nums; }
+.year h3 small { display: block; font: .7rem var(--mono); color: var(--muted); margin-top: 6px; letter-spacing: .03em; }
+.entries { display: grid; gap: 12px; }
+.entry { cursor: pointer; border-radius: 3px; padding: 4px 6px; margin: -4px -6px; }
+.entry:hover, .entry.sel { background: var(--panel); }
+.entry .et { font-weight: 600; }
+.entry .et.must { box-shadow: inset 0 -2px 0 var(--gilt); }
+.entry .ea { color: var(--muted); }
+.entry p { margin: 2px 0 0; max-width: 68ch; }
+.entry .todo { color: var(--muted); font-style: italic; font-size: .9rem; }
+@media (max-width: 560px) { .year { grid-template-columns: minmax(0, 1fr); gap: 10px; } }
+.summary { font-style: italic; margin: 12px 0 0; }
+.pill.must { color: var(--gilt); }
+.btn { font: 500 .8rem var(--mono); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 3px; padding: 5px 10px; cursor: pointer; }
+.btn:hover { border-color: var(--ink); }
+.pw { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.pw input { font: .9rem var(--mono); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 3px; padding: 5px 8px; width: 12em; }
+.err { color: var(--kindle); font: .8rem var(--mono); margin: 6px 0 0; }
+.overlay { position: fixed; inset: 0; z-index: 20; background: rgba(0,0,0,.45); display: flex; justify-content: center;
+  padding: calc(env(safe-area-inset-top, 0px) + 24px) max(16px, env(safe-area-inset-right, 0px)) calc(env(safe-area-inset-bottom, 0px) + 24px) max(16px, env(safe-area-inset-left, 0px)); }
+.sheet { background: var(--panel); color: var(--ink); border-radius: 6px; max-width: 760px; width: 100%; overflow: auto; padding: 22px 24px; }
+.sheet header { margin-bottom: 12px; }
+.sheet pre { white-space: pre-wrap; overflow-wrap: anywhere; font: .9rem/1.55 var(--body); margin: 0; }
 footer { margin-top: 36px; font: .75rem var(--mono); color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .spine { transition: none; } }
 </style>
@@ -122,6 +148,7 @@ footer { margin-top: 36px; font: .75rem var(--mono); color: var(--muted); }
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" id="tab-shelf" data-view="shelf">Shelf</button>
       <button class="tab" role="tab" id="tab-signal" data-view="signal">Signal</button>
+      <button class="tab" role="tab" id="tab-history" data-view="history">Reading history</button>
     </div>
     <label class="ctl search"><input type="search" id="q" placeholder="Search title, author, category" aria-label="Search"></label>
     <label class="ctl">Format
@@ -163,13 +190,22 @@ footer { margin-top: 36px; font: .75rem var(--mono); color: var(--muted); }
           </table></div>
         </div>
       </div>
+      <div id="view-history" hidden>
+        <p class="intro">The books I read each year, with a line or two on what I took from them. Underlined titles are the ones I'd call must-reads.</p>
+        <div id="history"></div>
+      </div>
     </section>
     <aside class="detail" id="detail" aria-live="polite"></aside>
   </div>
   <footer id="foot"></footer>
 </div>
 
+<div class="overlay" id="overlay" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <header style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><h2 id="sheet-title" style="margin:0;font:600 1.3rem var(--display)"></h2><button class="btn" id="sheet-close">Close</button></header>
+  <pre id="sheet-body"></pre>
+</div></div>
 <script id="books" type="application/json">__BOOKS_JSON__</script>
+<script id="private" type="application/json">__PRIVATE_JSON__</script>
 <script>
 const BOOKS = JSON.parse(document.getElementById("books").textContent).map(b => {
   // paper marks and Kindle highlights of the same book: take the larger, never the sum
@@ -253,11 +289,55 @@ function renderChart(list) {
     `<tr data-id="${esc(b.id)}"><td>${esc(b.title)}</td><td>${esc(b.author)}</td><td class="n">${b.pages}${b.ps === "est" ? "*" : ""}</td><td class="n">${b.signal}</td><td class="n">${fmt(b.density)}</td></tr>`).join("");
 }
 
+function renderHistory(list) {
+  const ids = new Set(list.map(b => b.id));
+  const byYear = {};
+  for (const b of BOOKS) {
+    if (!b.years || !ids.has(b.id)) continue;
+    for (const y of b.years.split(";")) (byYear[y] = byYear[y] || []).push(b);
+  }
+  const years = Object.keys(byYear).sort().reverse();
+  if (!years.length) { $("history").innerHTML = '<p class="empty">No books match. Clear the search or filters.</p>'; return; }
+  $("history").innerHTML = years.map(y => `<section class="year"><h3>${y}<small>${byYear[y].length} book${byYear[y].length > 1 ? "s" : ""}</small></h3>
+    <div class="entries">${byYear[y].map(b => `<div class="entry${state.sel === b.id ? " sel" : ""}" data-id="${esc(b.id)}">
+      <span class="et${b.must ? " must" : ""}">${esc(b.title)}</span> <span class="ea">· ${esc(b.author)}</span>
+      ${b.summary ? `<p>${esc(b.summary)}</p>` : b.todo ? '<p class="todo">Summary to come.</p>' : ""}</div>`).join("")}</div></section>`).join("");
+}
+
+// Long notes: an AES-GCM bundle, decrypted in the browser with a password
+const PRIVATE = JSON.parse(document.getElementById("private").textContent || "null");
+let notesCache = null;
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function unlock(pw) {
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+  const key = await crypto.subtle.deriveKey({ name: "PBKDF2", salt: unb64(PRIVATE.salt), iterations: PRIVATE.iterations, hash: "SHA-256" },
+    base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+  const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(PRIVATE.iv) }, key, unb64(PRIVATE.data));
+  notesCache = JSON.parse(new TextDecoder().decode(plain));
+  try { sessionStorage.setItem("lib-pw", pw); } catch (e) {}
+}
+function showNotes(b) {
+  $("sheet-title").textContent = "Notes: " + b.title;
+  $("sheet-body").textContent = notesCache[b.id] || "";
+  $("overlay").hidden = false;
+  $("sheet-close").focus();
+}
+function closeNotes() { $("overlay").hidden = true; }
+async function openNotes(b) {
+  if (!notesCache) {
+    let saved = null;
+    try { saved = sessionStorage.getItem("lib-pw"); } catch (e) {}
+    if (saved) { try { await unlock(saved); } catch (e) {} }
+  }
+  if (notesCache) return showNotes(b);
+  $("pwform").hidden = false; $("pw").focus();
+}
+
 function renderDetail() {
   const b = BOOKS.find(x => x.id === state.sel);
   const el = $("detail");
   if (!b) {
-    el.innerHTML = `<h2>Choose a book</h2><p class="hint">Click a spine, a dot on the chart, or a row in the table to see its details.</p>`;
+    el.innerHTML = `<h2>Choose a book</h2><p class="hint">Click a spine, a dot on the chart, a row in the table, or a book in the reading history to see its details.</p>`;
     return;
   }
   const rows = [
@@ -267,7 +347,14 @@ function renderDetail() {
     ["ISBN", b.isbn],
   ].filter(r => r[1] !== "" && r[1] != null && r[1] !== 0);
   const pills = (b.src.includes("mylibrary") ? '<span class="pill paper">Paper</span>' : "") + (b.src.includes("screvi") ? '<span class="pill kindle">Kindle</span>' : "");
-  el.innerHTML = `<p class="t">${esc(b.title)}</p><p class="a">${esc(b.author) || "Unknown author"}</p><div>${pills}</div>
+  const must = b.must ? '<span class="pill must">Must-read</span>' : "";
+  const readIn = b.years ? `<p class="hint" style="margin-top:10px">Read in ${b.years.split(";").join(" and ")}</p>` : "";
+  const hasLong = PRIVATE && PRIVATE.ids.includes(b.id);
+  el.innerHTML = `<p class="t">${esc(b.title)}</p><p class="a">${esc(b.author) || "Unknown author"}</p><div>${pills}${must}</div>
+    ${readIn}${b.summary ? `<p class="summary">${esc(b.summary)}</p>` : ""}
+    ${hasLong ? `<div style="margin-top:12px"><button class="btn" id="open-notes">Read my longer notes</button>
+      <form class="pw" id="pwform" hidden><input type="password" id="pw" placeholder="Password" aria-label="Password" autocomplete="off"><button class="btn" type="submit">Unlock</button></form>
+      <p class="err" id="pwerr" hidden>That password didn't work. Try again.</p></div>` : ""}
     <div class="density">${fmt(b.density)} <small>marks per 100 pages</small></div>
     <dl style="margin-top:14px">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
     ${b.isbn ? `<p style="margin:14px 0 0"><a href="https://openlibrary.org/isbn/${esc(b.isbn)}" target="_blank" rel="noopener">Open Library page</a></p>` : ""}`;
@@ -277,9 +364,10 @@ function render() {
   for (const t of document.querySelectorAll(".tab")) t.setAttribute("aria-selected", String(t.dataset.view === state.view));
   $("view-shelf").hidden = state.view !== "shelf";
   $("view-signal").hidden = state.view !== "signal";
+  $("view-history").hidden = state.view !== "history";
   $("sort-wrap").hidden = state.view !== "shelf";
   const list = filtered();
-  state.view === "shelf" ? renderShelf(list) : renderChart(list);
+  ({ shelf: renderShelf, signal: renderChart, history: renderHistory })[state.view](list);
   renderDetail();
   try { localStorage.setItem("lib-prefs", JSON.stringify({ src: state.src, sort: state.sort, onlysig: state.onlysig })); } catch (e) {}
 }
@@ -296,8 +384,19 @@ $("src").addEventListener("change", e => { state.src = e.target.value; render();
 $("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
 $("onlysig").addEventListener("change", e => { state.onlysig = e.target.checked; render(); });
 for (const t of document.querySelectorAll(".tab")) t.addEventListener("click", () => { location.hash = t.dataset.view; });
-document.addEventListener("click", e => { const t = e.target.closest("[data-id]"); if (t) select(t.dataset.id); });
-function fromHash() { state.view = location.hash === "#signal" ? "signal" : "shelf"; render(); }
+document.addEventListener("click", e => {
+  if (e.target.id === "open-notes") { openNotes(BOOKS.find(x => x.id === state.sel)); return; }
+  if (e.target.id === "overlay" || e.target.id === "sheet-close") { closeNotes(); return; }
+  const t = e.target.closest("[data-id]"); if (t) select(t.dataset.id);
+});
+document.addEventListener("submit", async e => {
+  if (e.target.id !== "pwform") return;
+  e.preventDefault();
+  try { await unlock($("pw").value); $("pwform").hidden = true; $("pwerr").hidden = true; showNotes(BOOKS.find(x => x.id === state.sel)); }
+  catch (err) { $("pwerr").hidden = false; }
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("overlay").hidden) closeNotes(); });
+function fromHash() { state.view = ({ "#signal": "signal", "#history": "history" })[location.hash] || "shelf"; render(); }
 window.addEventListener("hashchange", fromHash);
 $("src").value = state.src; $("sort").value = state.sort; $("onlysig").checked = state.onlysig;
 fromHash();
