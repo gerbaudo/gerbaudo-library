@@ -1,9 +1,6 @@
 id,isbn,asin,title,author,pages,published,categories,read,marks,oneshot,highlights,sources,pages_source
 unknown-particle-physics-booklet-july-2008,,,Particle Physics Booklet July 2008,,,,,0,,,,mylibrary,
 9781143478901,9781143478901,,Le bilan du monde,,218,2020,,0,,,,mylibrary,mylibrary
-9782907656542,9782907656542,,Voies de communication dans les montagnes de l'Ain,,,,,1,,,,manual,
-9782080263063,9782080263063,,"Au masculin: Sport, santé, bien-être après 40 ans",,,,,1,,,,manual,
-9788806262709,9788806262709,,Storia del Piemonte. Dalla preistoria alla globalizzazione,,,,,1,,,,manual,
 9782203090132,9782203090132,,"L'histoire de France en BD, Integrale : De la Prehistoire Ã nos jours ! [ History of France in Comic Book Format ] (French Edition)",Bruno Heitz (Illustrations),286,,,0,,,,mylibrary,openlibrary-isbn
 -do-more-great-work,,B003HMOW8E,Do More Great Work,"Michael Bungay Stanier, Seth Godin, Michael Port, and Dave Ulrich ; Chris Guillebeau ; Leo Babauta ;",,,,1,,,7,screvi,
 9788804553687,9788804553687,,Ultime lettere di condannati a morte e di deportati della resistenza (Italian Edition),Aavv,,28/03/2006,,0,,,,mylibrary,
@@ -23,6 +20,7 @@ auge-2010-electroweak-interactions-and-unified,,,2010 Electroweak Interactions a
 9788875211141,9788875211141,,"Gesù lava più bianco, ovvero Come la Chiesa inventò il marketing",Bruno Ballardini,220,2000,,0,,,,mylibrary,openlibrary-search
 9788858141649,9788858141649,,Dante,Alessandro Barbero,361,2020,Biography & Autobiography,0,4,,,mylibrary,openlibrary-isbn
 9788842093299,9788842093299,,"Barbari. Immigrati, profughi, deportati nell'impero romano",BARBERO,,2021,,0,,,,mylibrary,
+9788806262709,9788806262709,,Storia del Piemonte. Dalla preistoria alla globalizzazione,Alessandro Barbero,576,,,1,,,,manual,manual
 9780201149456,9780201149456,,Collider Physics,Vernon D. Barger,624,17/12/1996,Science,1,4,20,,mylibrary,mylibrary
 9780192835451,9780192835451,,The Flowers of Evil,Charles Baudelaire,399,1998,Literary Criticism,0,,,,mylibrary,mylibrary
 9782268107790,9782268107790,,Atlas géopolitique mondial 2023,Alexis Bautzmann,,,,0,,,,mylibrary,
@@ -102,6 +100,7 @@ dalio-principles-life-and-work,9781501124051,,Principles: Life and Work,Ray Dali
 9780099302780,9780099302780,B000VDUWMC,"Guns, Germs and Steel",Jared M. Diamond,480,1998,Civilization,1,20,26,90,mylibrary;screvi,mylibrary
 9781554071470,9781554071470,,NightWatch: A Practical Guide to Viewing the Universe,Dickinson,192,,,0,,,,mylibrary,openlibrary-isbn
 9780891343370,9780891343370,,Keys to Drawing,Bert Dodson,224,15/08/1990,,0,,,,mylibrary,mylibrary
+9782080263063,9782080263063,,"Au masculin: Sport, santé, bien-être après 40 ans",Jean-Marc Delorme and Fabien Doguet,192,,,1,,,,manual,manual
 9782744900143,9782744900143,,des platanes on les entendait cascailler - vivre et parler dans un village du midi,domergue,189,,,0,,,,mylibrary,openlibrary-isbn
 9788858833018,9788858833018,,Umiliati e offesi,Fëdor Dostoevskij,512,31/05/2018,Fiction,0,,,,mylibrary,mylibrary
 9788804516026,9788804516026,,Memorie dal sottosuolo,Fyodor Dostoyevsky,168,1864,,0,,,,mylibrary,openlibrary-isbn
@@ -277,6 +276,7 @@ meyers-effective-stl,9780321545183,B0019HW0K6,Effective STL,Scott Meyers,274,,,1
 9780007250929,9780007250929,,The Emperor of All Maladies,Siddhartha Mukherjee,571,2011,Medical,0,,,,mylibrary,mylibrary
 9780393337112,9780393337112,,Physics for Future Presidents: The Science Behind the Headlines,Richard A. Muller,384,,,1,30,15,,mylibrary,mylibrary
 9780393345100,9780393345100,,Energy for Future Presidents,Richard A. Muller,350,2013,Political Science,1,22,16,,mylibrary,mylibrary
+9782907656542,9782907656542,,Voies de communication dans les montagnes de l'Ain,Alain Mélo,120,,,1,,,,manual,manual
 9782757603314,9782757603314,,"Parapente, s'initier et progresser: S'initier et progresser",Pierre-Paul Ménégoz,,,,0,,,,mylibrary,
 neumann-the-computer-and-the-brain,9780300181111,,The Computer and the Brain,John von Neumann,83,,,1,3,,,manual,openlibrary-search
 9780691148908,9780691148908,,Reinventing Discovery,Michael Nielsen,264,2012,Computers,0,,,,mylibrary,mylibrary
