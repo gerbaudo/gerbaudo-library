@@ -1,10 +1,9 @@
 id,isbn,asin,title,author,pages,published,categories,read,marks,oneshot,highlights,sources,pages_source
 unknown-particle-physics-booklet-july-2008,,,Particle Physics Booklet July 2008,,,,,0,,,,mylibrary,
 9781143478901,9781143478901,,Le bilan du monde,,218,2020,,0,,,,mylibrary,mylibrary
-unknown-deploying-machine-learning-models-for,,,Deploying Machine Learning Models for Developers and Data Scientists,,,,,1,,,,manual,
-unknown-voies-de-communication-dans-les,,,Voies de communication dans les montagnes de l'Ain,,,,,1,,,,manual,
-unknown-au-masculin-sport-sante-bien,,,"Au masculin: Sport, santé, bien-être après 40 ans",,,,,1,,,,manual,
-unknown-storia-del-piemonte-dalla-preistoria,,,Storia del Piemonte. Dalla preistoria alla globalizzazione,,,,,1,,,,manual,
+9782907656542,9782907656542,,Voies de communication dans les montagnes de l'Ain,,,,,1,,,,manual,
+9782080263063,9782080263063,,"Au masculin: Sport, santé, bien-être après 40 ans",,,,,1,,,,manual,
+9788806262709,9788806262709,,Storia del Piemonte. Dalla preistoria alla globalizzazione,,,,,1,,,,manual,
 9782203090132,9782203090132,,"L'histoire de France en BD, Integrale : De la Prehistoire Ã nos jours ! [ History of France in Comic Book Format ] (French Edition)",Bruno Heitz (Illustrations),286,,,0,,,,mylibrary,openlibrary-isbn
 -do-more-great-work,,B003HMOW8E,Do More Great Work,"Michael Bungay Stanier, Seth Godin, Michael Port, and Dave Ulrich ; Chris Guillebeau ; Leo Babauta ;",,,,1,,,7,screvi,
 9788804553687,9788804553687,,Ultime lettere di condannati a morte e di deportati della resistenza (Italian Edition),Aavv,,28/03/2006,,0,,,,mylibrary,
@@ -89,7 +88,7 @@ covert-how-to-make-sense-of,9781500615994,,How to Make Sense of Any Mess,Abby Co
 9780500285268,9780500285268,,Graphic Design School,David Dabner,192,2004,Commercial art,0,,,,mylibrary,mylibrary
 9780140328882,9780140328882,,The Wonderful Story of Henry Sugar (Plus),Dahl,240,1988,,0,3,,,mylibrary,openlibrary-isbn
 dalio-principles-life-and-work,9781501124051,,Principles: Life and Work,Ray Dalio,592,,,1,,,,manual,openlibrary-search
-dalio-principles-for-dealing-with-the,,,Principles for Dealing with the Changing World Order: Why Nations Succeed or Fail,Ray Dalio,,,,1,,,,manual,
+9781471196690,9781471196690,,Principles for Dealing with the Changing World Order: Why Nations Succeed or Fail,Ray Dalio,336,2020,,1,,,,manual,manual
 9781617295607,9781617295607,,Data Science with Python and Dask,Jesse Daniel,296,30/07/2019,Computers,1,2,10,,mylibrary,mylibrary
 9780192853455,9780192853455,,Economics,Partha Dasgupta,172,22/02/2007,Business & Economics,0,12,,,mylibrary,mylibrary
 9780133902839,9780133902839,,Bayesian Methods for Hackers: Probabilistic Programming and Bayesian Inference (Addison-Wesley Data & Analytics),Cameron Davidson-Pilon,256,12/10/2015,,1,4,6,,mylibrary,mylibrary
