@@ -25,7 +25,8 @@ Rules already decided by Davide:
   in one scan: keep one, with the largest count.
 - Paper marks and Kindle highlights of the same book: use the larger, never the sum.
 - Book quotes go to Screvi, not to this repo. Summaries are public and in his own words.
-  Long notes are private (encrypted, password in `private_notes.py`).
+  Long notes are private (encrypted). The password is not in the repo: ask Davide, or
+  search his past Claude chats for "library notes password". Never write it into a file.
 
 Always finish a change with: `cd scripts && python merge.py && python build_site.py`,
 check the output for warnings, commit with a clear message, and push.
@@ -44,8 +45,8 @@ check the output for warnings, commit with a clear message, and push.
 4. Write the row in `data/notes.csv` (create or update; `summary_status` = `mine` if he
    wrote it, `draft` if he approved a draft without rewriting; `todo` = 0 once there is a summary).
 5. If he gives longer notes too, save them in `data/private/notes/<id>.md` and run
-   `python scripts/private_notes.py encrypt` (in a fresh clone, run `decrypt` first so
-   existing notes are not lost).
+   `LIBRARY_PASSWORD=... python scripts/private_notes.py encrypt` (in a fresh clone,
+   run `decrypt` first so existing notes are not lost).
 6. Rebuild, commit, push. Tell him it is on the Reading history tab.
 
 ## Add a book

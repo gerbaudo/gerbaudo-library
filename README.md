@@ -49,6 +49,10 @@ across editions of the title: an estimate, fine for Kindle books).
   (git-ignored) and committed only as an encrypted bundle,
   `data/notes_private.enc.json` (`scripts/private_notes.py encrypt|decrypt`). The page
   shows them behind a password. This is protection against scraping, not real secrecy.
+- **Password hint:** it is not stored anywhere in this repo. It was chosen in the
+  Claude conversation where this library was set up (November 2026): ask Claude to
+  search my past chats for "library notes password". Run the script with
+  `LIBRARY_PASSWORD=... python scripts/private_notes.py decrypt`, or type it when asked.
 - Quotes live in [Screvi](https://screvi.com), not in this repo.
 - `data/manual.csv`: books added by hand, e.g. with `scripts/add_book.py <isbn>`.
 - `.claude/skills/library/SKILL.md` describes these workflows for Claude

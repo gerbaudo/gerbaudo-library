@@ -7,11 +7,14 @@ Usage:
 The plain notes in data/private/ are git-ignored. The committed bundle is AES-GCM
 encrypted with a key derived (PBKDF2-SHA256) from a password, so the web page can
 decrypt it in the browser after asking for the password. This is light protection
-against scraping and casual reading, not real secrecy: the default password is
-written here. Set LIBRARY_PASSWORD to use another one.
+against scraping and casual reading, not real secrecy.
+
+The password is not stored in the repo. Set LIBRARY_PASSWORD, or type it when asked.
+See the README for a hint.
 """
 
 import base64
+import getpass
 import glob
 import json
 import os
@@ -28,7 +31,8 @@ ITERATIONS = 200_000
 
 
 def password() -> bytes:
-    return os.environ.get("LIBRARY_PASSWORD", "dglibrary").encode()
+    pw = os.environ.get("LIBRARY_PASSWORD") or getpass.getpass("Library notes password: ")
+    return pw.encode()
 
 
 def key(salt: bytes) -> bytes:
