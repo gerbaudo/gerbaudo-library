@@ -1,4 +1,4 @@
-{"fetched": "2026-11-15 (titles and ISBNs after cleanup)", "via": "Screvi MCP list-sources (types=book)", "sources": [
+{"fetched": "2026-11-15 16:55", "via": "Screvi MCP list-sources (types=book)", "sources": [
 {"id": "c7e6bd01-b7d3-4cb9-abcf-12c400496832", "name": "AI Engineering", "author": "Chip Huyen", "asin": "", "count": 149, "last": "2026-05-05", "isbn": "9781098166304"},
 {"id": "26bd3c14-450f-48df-be22-6a924bf5169e", "name": "Becoming a Technical Leader", "author": "Gerald Weinberg", "asin": "B004J4VV3I", "count": 142, "last": "2025-09-09", "isbn": ""},
 {"id": "208002e9-a2fb-40f4-b2e8-a5daaf3642d6", "name": "Guns, Germs, and Steel", "author": "Jared Diamond", "asin": "B000VDUWMC", "count": 90, "last": "2025-09-09", "isbn": "9780099302780"},
@@ -75,7 +75,7 @@
 {"id": "2626a399-8822-4505-bd10-4072694205a6", "name": "The Little Book on CoffeeScript", "author": "Alex MacCaw", "asin": "B006ZYZCRQ", "count": 4, "last": "2025-09-09", "isbn": ""},
 {"id": "f96da902-3df6-4946-9488-d6eeeea9a342", "name": "The Origin Of Species: 150th Anniversary Edition", "author": "Charles Darwin and Julian Huxley", "asin": "B002JF1N0A", "count": 4, "last": "2025-09-09", "isbn": ""},
 {"id": "5afb739b-4716-43b9-83b5-d8b9f7e84747", "name": "Data Science from Scratch with Python", "author": "Peter Morgan and AI Sciences Publisher", "asin": "B07GRDWJ5L", "count": 4, "last": "2025-09-09", "isbn": ""},
-{"id": "d3b9e753-22a8-44ba-ab0d-c61d01c4f7b5", "name": "Il sistema periodico", "author": "Primo Levi", "asin": "", "count": 3, "last": "2026-11-09", "isbn": "9788806272104"},
+{"id": "d3b9e753-22a8-44ba-ab0d-c61d01c4f7b5", "name": "Il sistema periodico", "author": "Primo Levi", "asin": "", "count": 10, "last": "2026-11-15", "isbn": "9788806272104"},
 {"id": "2614c7a7-394c-459b-a320-c095db27168b", "name": "refdp2024-77-Transition energetique", "author": "Minaee et al. arXiv_2402.06196", "asin": "", "count": 3, "last": "2024-09-12", "isbn": ""},
 {"id": "10e5cd96-4c85-436a-ae3a-debb6836e9d8", "name": "Probabilistic machine learning and artificial intelligence", "author": "Zoubin Ghahramani", "asin": "", "count": 3, "last": "2020-12-04", "isbn": ""},
 {"id": "383fa28d-dab3-4047-aadd-b4743a5243b4", "name": "Machine Learning Pocket Reference", "author": "Matt Harrison", "asin": "", "count": 3, "last": "2023-04-07", "isbn": ""},
