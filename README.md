@@ -4,7 +4,7 @@ My personal library: the books I own and read, with a simple measure of how much
 each one gave me — the number of passages I marked or highlighted, compared with
 its length.
 
-Published at <https://gerbaudo.github.io/gerbaudo-library> (coming soon).
+Published at <https://gerbaudo.github.io/gerbaudo-library>.
 
 ## How it works
 
