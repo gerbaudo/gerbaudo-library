@@ -12,8 +12,10 @@ Published at <https://gerbaudo.github.io/gerbaudo-library> (coming soon).
 - **Importers** in `scripts/` turn each source into the same columns:
   - `import_mylibrary.py` — the *My Library* Android app's SQLite export
     (page marks are stored in its Comments field)
-  - `import_screvi.py` — a [Screvi](https://screvi.com) highlights CSV export
-    (Screvi also syncs Kindle); only per-book counts are kept
+  - `import_screvi.py` — per-book highlight counts from [Screvi](https://screvi.com)
+    (which also syncs Kindle): either `data/screvi_sources_snapshot.json`, the output
+    of Screvi's `list-sources` MCP tool saved by Claude (no export needed), or a
+    Screvi CSV export; only counts are kept
   - `data/screvi_sources.csv` — maps messy Screvi source names (PDF file names,
     one book under two names) to a proper title and author, and marks papers and
     articles (`kind = paper`) so they stay out of the book library
@@ -33,7 +35,7 @@ Published at <https://gerbaudo.github.io/gerbaudo-library> (coming soon).
 # drop new exports into data/raw/, then:
 cd scripts
 python import_mylibrary.py ../data/raw/mylibrary-YYYYMM.db ../data/mylibrary-YYYYMM.csv   # one per snapshot
-python import_screvi.py ../data/raw/screvi-highlights-YYYY-MM-DD.csv ../data/screvi.csv
+python import_screvi.py ../data/screvi_sources_snapshot.json ../data/screvi.csv  # or a CSV export
 python merge.py
 python enrich_openlibrary.py   # look up missing pages/ISBNs (cached in data/openlibrary.csv)
 python merge.py                # re-merge to apply them
