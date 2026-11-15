@@ -1,7 +1,13 @@
 """Aggregate a Screvi highlights CSV export into one row per book.
 
 Usage:
+    python scripts/import_screvi.py data/screvi_sources_snapshot.json data/screvi.csv   # preferred
     python scripts/import_screvi.py data/raw/screvi-highlights-YYYY-MM-DD.csv data/screvi.csv
+
+The JSON snapshot is the output of the Screvi MCP tool list-sources (types=book),
+saved by Claude: one entry per source with its highlight count, no highlight text.
+A CSV export works too and also lets duplicates be detected (Screvi now skips
+duplicate highlights itself, so the snapshot counts are already clean).
 
 Only counts and metadata are written; the highlight text never leaves data/raw/.
 
@@ -28,8 +34,37 @@ def load_map():
 from common import book_id
 
 
+def from_snapshot(path, mapping):
+    """Per-book counts from a list-sources snapshot (JSON)."""
+    import json
+    with open(path, encoding="utf-8") as fh:
+        sources = json.load(fh)["sources"]
+    books = defaultdict(lambda: {"highlights": 0, "notes": 0, "favorites": 0, "dates": []})
+    skipped = defaultdict(int)
+    for s in sources:
+        src, author = s["name"].strip(), (s.get("author") or "").strip()
+        m = mapping.get(src)
+        if m and m["kind"] != "book":
+            skipped[src] += s["count"]
+            continue
+        if not s["count"]:
+            continue
+        if m and m["title"]:
+            src, author = m["title"], m["author"] or author
+        b = books[(src, author)]
+        b["highlights"] += s["count"]  # two Screvi sources for one book are added up
+        if s.get("last"):
+            b["dates"].append(s["last"])
+        if s.get("asin"):
+            b["asin"] = s["asin"]
+    return books, skipped
+
+
 def main(in_path: str, out_path: str) -> None:
     mapping = load_map()
+    if in_path.endswith(".json"):
+        books, skipped = from_snapshot(in_path, mapping)
+        return write(books, skipped, out_path)
     books = defaultdict(lambda: {"highlights": 0, "notes": 0, "favorites": 0, "dates": [], "seen": set()})
     skipped = defaultdict(int)
     with open(in_path, newline="", encoding="utf-8-sig") as fh:
@@ -57,6 +92,10 @@ def main(in_path: str, out_path: str) -> None:
             if row.get("ASIN"):
                 b["asin"] = row["ASIN"].strip()
 
+    write(books, skipped, out_path)
+
+
+def write(books, skipped, out_path):
     fields = ["id", "title", "author", "asin", "highlights", "notes", "favorites",
               "first_highlight", "last_highlight", "source"]
     with open(out_path, "w", newline="", encoding="utf-8") as fh:

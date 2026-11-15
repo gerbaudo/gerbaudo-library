@@ -17,7 +17,7 @@ asimov-foundation,9780380380756,B000FC1PWA,Foundation,Isaac Asimov,240,,,1,,,7,s
 auge-2010-electroweak-interactions-and-unified,,,2010 Electroweak Interactions and Unified Theories,Etienne Auge,,16/03/2010,Proceedings,1,1,4,,mylibrary,
 9782950864499,9782950864499,,Les Visiteurs du Ciel,Unknown Author,,,,0,,,,mylibrary,
 9791033511960,9791033511960,,Carbone et Silicium,Mathieu Bablet,267,2020,,0,,,,mylibrary,openlibrary-isbn
-bahree-generative-ai-in-action,,,Generative AI in Action,Amit Bahree,,,,1,,,62,screvi,
+bahree-generative-ai-in-action,9781633436947,,Generative AI in Action,Amit Bahree,,,,1,,,62,screvi,
 9788875211141,9788875211141,,"Gesù lava più bianco, ovvero Come la Chiesa inventò il marketing",Bruno Ballardini,220,2000,,0,,,,mylibrary,openlibrary-search
 9788858141649,9788858141649,,Dante,Alessandro Barbero,361,2020,Biography & Autobiography,0,4,,,mylibrary,openlibrary-isbn
 9788842093299,9788842093299,,"Barbari. Immigrati, profughi, deportati nell'impero romano",BARBERO,,2021,,0,,,,mylibrary,
@@ -67,7 +67,7 @@ carroll-alice-nel-paese-delle-meraviglie,9781492759003,,Alice nel paese delle me
 9782868836359,9782868836359,,Leçons de Marie Curie,Isabelle Chavannes,124,2003,Physics,1,1,15,,mylibrary,mylibrary
 chekhov-the-lady-with-the-dog,9781421821719,,The Lady with the Dog and Other Stories,Anton Chekhov,242,,Kindle,0,,,,manual,openlibrary-search
 chekhov-the-sea-gull,,,The Sea-Gull,Anton Chekhov,,,Kindle,0,,,,manual,
-chen-pandas-for-everyone-2nd-edition,,,"Pandas for Everyone, 2nd Edition",Daniel Y. Chen,,,,1,,,1,screvi,
+chen-pandas-for-everyone-2nd-edition,,,"Pandas for Everyone, 2nd Edition",Daniel Y. Chen,,,,1,,,6,screvi,
 9788884905345,9788884905345,,Due ore di lucidità,Noam Chomsky,,,,0,,,,mylibrary,
 9788851520892,9788851520892,,I nuovi mandarini. Gli intellettuali e il potere in America,Noam Chomsky,,,,0,,,,mylibrary,
 9780008316426,9780008316426,,How Will You Measure Your Life?: A thought-provoking approach to measuring life's success,Christensen,131,,,0,20,,,mylibrary,openlibrary-search
@@ -219,7 +219,7 @@ howey-wool-omnibus-edition-kindle-in,,B0071XO8RA,Wool Omnibus Edition [Kindle in
 9782744192708,9782744192708,,"Le vin pour tous : Le connaÃ®tre, le dÃ©guster, histoire, cÃ©pages, terroirs (DÃ©clic)",Myriam Huet,,,,1,1,30,,mylibrary,
 9780060850524,9780060850524,,Brave New World,Aldous Huxley,288,17/10/2006,,0,,,,mylibrary,mylibrary
 huxley-the-origin-of-species-150th,9780393978674,B002JF1N0A,The Origin Of Species: 150th Anniversary Edition,Charles Darwin and Julian Huxley,146,,,1,,,4,screvi,openlibrary-search
-huyen-designing-machine-learning-systems-an,9781098107963,,Designing Machine Learning Systems: An Iterative Process for Production-Ready Applications,Chip Huyen,386,05/2022,,0,,,97,mylibrary;screvi,openlibrary-search
+huyen-designing-machine-learning-systems-an,9781098107963,,Designing Machine Learning Systems: An Iterative Process for Production-Ready Applications,Chip Huyen,386,05/2022,,0,,,98,mylibrary;screvi,openlibrary-search
 9781098166304,9781098166304,,AI Engineering,Chip Huyen,350,2024,,0,,,149,mylibrary;screvi,openlibrary-isbn
 isaacson-benjamin-franklin-an-american-life,9780743258074,,Benjamin Franklin: An American Life,Walter Isaacson,590,,,1,,,,manual,openlibrary-search
 9782706615061,9782706615061,,"Guide du bois, de la menuiserie et de l'ébénisterie",Albert Jackson,319,1991,,1,20,40,,mylibrary,mylibrary
@@ -245,7 +245,7 @@ khononov-learning-domain-driven-design,9781098100131,,Learning Domain-Driven Des
 leighton-surely-you-re-joking-mr,9780393316049,,"""Surely You're Joking, Mr. Feynman!"": Adventures of a Curious Character",Richard P. Feynman and Ralph Leighton,352,,,1,,,,manual,openlibrary-search
 9789083016610,9789083016610,,"Rock, Paper, Scissors: The Instant Leadership Solution",Fred Lennox,190,28/09/2019,Business & Economics,0,,,,mylibrary,mylibrary
 9788806176556,9788806176556,,Se questo è un uomo,Primo Levi,209,1958,,0,,,,mylibrary,openlibrary-isbn
-9788806272104,9788806272104,,Il sistema periodico,Primo Levi,238,12/04/1975,,0,8,,,mylibrary,openlibrary-search
+9788806272104,9788806272104,,Il sistema periodico,Primo Levi,238,12/04/1975,,0,8,,3,mylibrary;screvi,openlibrary-search
 9780713999914,9780713999914,,SuperFreakonomics,Steven D. Levitt,256,,,0,,,,mylibrary,openlibrary-isbn
 9780061234002,9780061234002,,Freakonomics Rev Ed,Steven D. Levitt,336,17/10/2006,Business & Economics,0,2,,,mylibrary,mylibrary
 9781131494371,9781131494371,,Introduction to Fourier analysis and generalized functions,Sir M. J. Lighthill,79,1958,,1,8,8,,mylibrary,mylibrary
@@ -350,8 +350,8 @@ robbins-get-it-done-guy-s,9781429925532,B003SNJLA6,Get-It-Done Guy's 9 Steps to 
 rochefoucauld-reflexions-ou-sentences-et-maximes,,B004UJO4UY,Réflexions ou sentences et maximes morales (French Edition),François duc de La Rochefoucauld,405,,,1,,,7,screvi,openlibrary-search
 9780471572701,9780471572701,,Modern Physics from alpha to Z0,James William Rohlf,664,12/04/1994,Science,1,1,12,,mylibrary,mylibrary
 9781473637467,9781473637467,,Factfulness,Hans Rosling,352,03/04/2018,Business & Economics,0,34,,,mylibrary,mylibrary
-rossant-learning-ipython-for-interactive-computing,9781782169932,B00CITNPHQ,Learning IPython for Interactive Computing and Data Visualization,Cyrille Rossant,138,,,1,,,1,screvi,openlibrary-search
 rossant-ipython-interactive-computing-and-visualization,9781322166223,,IPython Interactive Computing and Visualization Cookbook,Cyrille Rossant,512,,,1,,,1,screvi,openlibrary-search
+rossant-learning-ipython-for-interactive-computing,9781782169932,B00CITNPHQ,Learning IPython for Interactive Computing and Data Visualization,Cyrille Rossant,138,,,1,,,1,screvi,openlibrary-search
 9788872468401,9788872468401,,The Ways of Giacomo Puccini,Daniele Rubboli,144,,,0,,,,mylibrary,mylibrary
 9781292153964,9781292153964,,"Artificial Intelligence: A Modern Approach, Global Edition",Russell,1152,,,0,5,,2,mylibrary;screvi,openlibrary-isbn
 9780345331359,9780345331359,,Cosmos,Carl Sagan,324,1985,Science,0,31,,23,mylibrary;screvi,mylibrary
@@ -414,7 +414,7 @@ taleb-fooled-by-randomness,9781587991844,B001FA0W5W,Fooled by Randomness,Nassim 
 9780201384239,9780201384239,,Exploring Black Holes,Edwin F. Taylor,352,01/01/2000,,0,,,,mylibrary,openlibrary-isbn
 9788830421424,9788830421424,,Un altro giro di giostra (Il Cammeo Vol. 415) (Italian Edition),Tiziano Terzani,645,31/12/2010,,0,,,,mylibrary,mylibrary
 thiongo-dreams-in-a-time-of,9780307476210,B0036S4EMI,Dreams in a Time of War: A Childhood Memoir,Ngugi wa  Thiongo,256,,,1,,,32,screvi,openlibrary-search
-9781492077060,9781492077060,B09HL5ZNVN,Practical Weak Supervision: Doing More with Less Data,Tok,200,2021,,0,5,,1,mylibrary;screvi;screvi,openlibrary-isbn
+9781492077060,9781492077060,B09HL5ZNVN,Practical Weak Supervision: Doing More with Less Data,Tok,200,2021,,0,5,,4,mylibrary;screvi,openlibrary-isbn
 torelli-baba-camillo-e-altre-storie,,,Baba Camillo e altre storie d'Africa,Giorgio Torelli,143,2007,,0,,,,mylibrary,mylibrary
 9788871590769,9788871590769,,Excalibur la spada incantata e altri racconti della tavola rotonda,Silvia Torrealta,278,1991,,0,,,,mylibrary,mylibrary
 9781492052203,9781492052203,,"Architecture Patterns with Python: Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices",Triyam Trader,280,24/03/2020,,0,8,,,mylibrary,openlibrary-isbn
@@ -442,7 +442,7 @@ vonnegut-2-b-r-0-2,,,2 B R 0 2 B,Kurt Vonnegut,,,Kindle,0,,,,manual,
 9780764551949,9780764551949,,Spanish For Dummies,Susana Wald,432,15/12/1999,Foreign Language Study,0,,,,mylibrary,mylibrary
 weber-food-inc-a-participant-guide,9781586486945,,"Food, Inc.: A Participant Guide",Karl Weber,321,,Kindle,0,,,,manual,openlibrary-search
 9780525542810,9780525542810,,Superthinking,Gabriel Weinberg,352,30/04/2019,Business & Economics,0,,,,mylibrary,mylibrary
-weinberg-becoming-a-technical-leader,9780932633026,,Becoming a Technical Leader,Gerald M. Weinberg,284,,,1,,,148,screvi,openlibrary-search
+weinberg-becoming-a-technical-leader,9780932633026,B004J4VV3I,Becoming a Technical Leader,Gerald M. Weinberg,284,,,1,,,142,screvi,openlibrary-search
 wells-a-short-history-of-the,9798530945748,B0CG6Q41G2,A Short History of The World,H. G. Wells,364,,,1,,,9,screvi,openlibrary-search
 9781780225593,9781780225593,,Scale,Geoffrey West,479,03/05/2018,Science,1,29,10,,mylibrary,mylibrary
 wiesel-night-night-trilogy,9780374500016,B0071VUXXA,Night (Night Trilogy),Elie Wiesel and Marion Wiesel,152,,,1,,,7,screvi,openlibrary-search

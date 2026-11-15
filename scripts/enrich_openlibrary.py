@@ -26,7 +26,7 @@ from common import match_key, normalize_isbn
 DATA = os.path.join(os.path.dirname(__file__), "..", "data")
 CACHE = os.path.join(DATA, "openlibrary.csv")
 FIELDS = ["id", "pages", "isbn", "ol_key", "method"]
-HEADERS = {"User-Agent": "gerbaudo-library/0.1 (davide.gerbaudo@gmail.com)"}
+HEADERS = {"User-Agent": "gerbaudo-library/0.1 (https://github.com/gerbaudo/gerbaudo-library)"}
 
 
 def get_json(url):

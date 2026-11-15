@@ -119,9 +119,12 @@ def main() -> None:
         tid = find(None, key, r["title"])
         target = books.get(tid) if tid else None
         if target:
-            target["highlights"] = r["highlights"]
+            # a book can come from more than one Screvi source: add them up
+            prev = to_int(target["highlights"]) if "screvi" in target["sources"] else None
+            target["highlights"] = str((prev or 0) + (to_int(r["highlights"]) or 0))
             target["asin"] = target["asin"] or r["asin"]
-            target["sources"] += ";screvi"
+            if "screvi" not in target["sources"]:
+                target["sources"] += ";screvi"
         else:
             row = {f: "" for f in FIELDS}
             row.update(id=r["id"], asin=r["asin"], title=r["title"], author=r["author"],
